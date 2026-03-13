@@ -1,60 +1,46 @@
 # Jaffle Assistant
 
-This repository contains a project for the **Jaffle Shop** dataset stored in a DuckDB database. The goal of the project is to integrate an agent for users to ask business questions to the agent and to get answers in natural language.
+An AI-powered chat assistant for the Jaffle Shop dataset. Ask business questions in plain English and get answers backed by live data, with charts where relevant.
+
+Built with LangChain, Gemini 2.5 Flash, FastAPI, DuckDB, and React.
+
+---
+
+## Requirements
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [Google AI Studio API key](https://aistudio.google.com) (free tier works fine)
+
+---
 
 ## Setup
 
-Install the required Python packages:
+**1. Add your API key**
+
+Copy `.env.example` to `.env` and fill in your key:
+
+```
+GOOGLE_API_KEY=your_key_here
+```
+
+**2. Run**
 
 ```bash
-pip install -r requirements.txt
+docker compose up --build
 ```
 
-## Project Structure
+Frontend -> http://localhost:3000  
+API docs -> http://localhost:8000/docs
 
+---
+
+## Data Exploration Notebook
+
+To explore the raw dataset before chatting with the agent:
+
+```bash
+pip install -r backend/requirements.txt
+jupyter notebook data_exploration.ipynb
 ```
-Jaffle-Assistant/
-│
-├── jaffle_shop.duckdb
-├── data_exploration.ipynb
-├── requirements.txt
-└── README.md
-```
 
-### `jaffle_shop.duckdb`
-
-This is the DuckDB database file containing the **Jaffle Shop dataset**.  
-The database stores multiple relational tables representing the business data of the fictional Jaffle Shop.
-
-Typical tables in the dataset include entities such as:
-
-- customers
-- orders
-- products
-- payments
-
-### `data_exploration.ipynb`
-
-This Jupyter notebook performs an initial exploration of the `jaffle_shop.duckdb` database.
-
-The notebook includes code that:
-
-- Connects to the DuckDB database
-- Lists available tables
-- Displays schema information for each table
-- Shows the first 5 rows of each table
-
-Running the notebook cell-by-cell provides a quick overview of:
-
-- table structures
-- column data types
-- example records
-- how the dataset is organized
-
-This notebook is intended as a **starting point for understanding the dataset before building further analyses or applications**.
-
-## Usage
-
-1. Install dependencies
-2. Open the notebook
-3. Run the cells sequentially to explore the database
+The notebook walks through the database tables, schemas, and sample rows.

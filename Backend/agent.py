@@ -9,8 +9,7 @@ import os
 
 load_dotenv()  # Load environment variables from .env file
 
-# ── LLM ──────────────────────────────────────────────────────────────────────
-
+# Load the LLM
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     temperature=0,
@@ -18,8 +17,8 @@ llm = ChatGoogleGenerativeAI(
     max_retries=2,
 )
 
-# ── Tools ─────────────────────────────────────────────────────────────────────
 
+# MCP - Tools for the agent to create visualizations or query the database. 
 @tool
 def query_database(sql: str) -> str:
     """
@@ -83,7 +82,6 @@ def generate_insight(data: str, question: str) -> str:
     })
 
 
-# ── Agent ─────────────────────────────────────────────────────────────────────
 
 TOOLS = [query_database, generate_visualization, generate_insight]
 llm_with_tools = llm.bind_tools(TOOLS)
