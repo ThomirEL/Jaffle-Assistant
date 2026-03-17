@@ -33,5 +33,5 @@ def schema():
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    result = run_agent(request.message, SCHEMA)
+    result = run_agent(request.message, SCHEMA, base_prompt=None)  # Use default prompt with live schema
     return result

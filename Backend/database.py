@@ -1,11 +1,12 @@
 import duckdb
 
-DB_PATH = "jaffle_shop.duckdb"
+from pathlib import Path
+
+DB_PATH = Path(__file__).parent / "jaffle_shop.duckdb"
 
 
 def get_connection():
-    return duckdb.connect(DB_PATH)
-
+    return duckdb.connect(str(DB_PATH))
 
 def get_schema() -> str:
     """
