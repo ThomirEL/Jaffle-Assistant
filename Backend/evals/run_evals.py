@@ -28,18 +28,6 @@ TRACKER = UsageTracker()
 SQL_REPEATED_TIMES = 3
 
 def run_question(variant: dict, question_config: dict, schema: str, session_id: str) -> dict:
-    """
-    Execute a single evaluation question against a variant.
-    
-    Args:
-        variant: Variant configuration dictionary
-        question_config: Question configuration from EVAL_QUESTIONS
-        schema: Database schema information
-        session_id: Session identifier for tracking
-        
-    Returns:
-        Dictionary with question result and scores
-    """
     start = time.time()
     try:
         if variant["agent_type"] == "multi":
@@ -47,6 +35,9 @@ def run_question(variant: dict, question_config: dict, schema: str, session_id: 
         elif variant["agent_type"] == "reasoning_multi":
             response = run_reasoning_multi_agent(question_config["question"], schema)
         elif variant["agent_type"] == "single":
+            prompt = variant["system_prompt"]
+            if "{schema}" in prompt:
+                prompt = prompt.format(schema=schema)
             response = run_agent(
                 question_config["question"],
                 schema,
@@ -58,11 +49,14 @@ def run_question(variant: dict, question_config: dict, schema: str, session_id: 
 
         latency = time.time() - start
         error = None
+
     except Exception as e:
-        response = {"text": "", "chart": None}
+        response = {"text": "", "chart": None, "sql_queries": []}
         latency = time.time() - start
         error = str(e)
         print(f"  Error running question {question_config['id']}: {error}")
+
+    sql_queries = response.get("sql_queries", [])
 
     scores = score_response(
         question_config["question"],
@@ -71,19 +65,22 @@ def run_question(variant: dict, question_config: dict, schema: str, session_id: 
         session_id=session_id,
     )
 
-    print(f"    → text: {response.get('text', 'EMPTY')}")
+    print(f"    → text: {response.get('text', 'EMPTY')[:80]}")
     print(f"    → chart: {'yes' if response.get('chart') else 'no'}")
+    if sql_queries:
+        for i, sql in enumerate(sql_queries):
+            print(f"    → sql[{i}]: {sql[:120]}")
 
     return {
-        "question_id": question_config["id"],
-        "question":    question_config["question"],
-        "category":    question_config["category"],
-        "latency":     round(latency, 2),
-        "error":       error,
-        "agent_text":  response.get("text", ""),
+        "question_id":  question_config["id"],
+        "question":     question_config["question"],
+        "category":     question_config["category"],
+        "latency":      round(latency, 2),
+        "error":        error,
+        "agent_text":   response.get("text", ""),
+        "sql_queries":  sql_queries,      # ← saved to JSON
         **scores,
     }
-
 
 def main():
     from token_tracker import print_summary
@@ -94,7 +91,7 @@ def main():
 
     mlflow.set_tracking_uri(f"file:///{MLFLOW_DIR}")
     print(f"MLflow logging to: {MLFLOW_DIR}")
-    mlflow.set_experiment("jaffle-agent-evals-run-5-repeatability")
+    mlflow.set_experiment("jaffle-agent-evals-run-6-repeatability-with-sql-queries")
 
     TYPE_OF_RUN = "sql_updated_baseline"  # Change this to "agent" or "prompt" to run those variants instead of the updated baseline prompt
 

@@ -1,0 +1,85 @@
+Variant: sql_updated_baseline
+Session: sql_updated_baseline_214517
+
+============================================================
+[q01] What are the top 5 products by revenue?
+Latency: 19.71s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Spicy Beef Jaffle leads by revenue at $5,324, followed closely by BBQ Chicken Jaffle at $5,030. The top 5 products together account for about 40% of total revenue, showing strong concentration in savory meat-based options. The Breakfast Jaffle at $4,285 suggests morning sales are healthy too.
+
+Would you like to see how these products perform across different order channels?
+
+============================================================
+[q02] How many orders do we have in total?
+Latency: 8.02s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffle Shop has processed 2,645 completed orders in total. That's a healthy baseline — would you like to see how that's distributed across product categories or customer loyalty tiers?
+
+============================================================
+[q03] How has order volume trended over time?
+Latency: 31.89s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Order volume grew steadily from March to October 2025, peaking at 115 orders in October before dipping to 86 in February 2026. The recent decline is worth monitoring — it could reflect seasonal patterns or early signs of churn.
+
+Would you like to break this down by order channel to see where the drop is coming from?
+
+============================================================
+[q04] Which customers have placed the most orders?
+Latency: 19.59s
+Relevance: 7
+Graceful: None
+
+Agent response:
+William Moore leads with 24 completed orders, followed closely by three customers tied at 22 orders each. The top 10 customers range from 19 to 24 orders, showing a small but consistent group of high-frequency buyers.
+
+These loyal customers represent a significant portion of your repeat business. Would you like to see their total revenue contribution or identify any patterns in their ordering behavior?
+
+============================================================
+[q05] What is the revenue split by product category?
+Latency: 22.68s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffles generate the majority of revenue at 56%, followed by Beverages at 23%. Desserts and Sides make up the remaining 21% combined.
+
+The dominance of Jaffles in revenue makes sense given they're the core product, but the strong Beverages showing suggests customers often pair drinks with their meals. Would you like to see how this revenue split has changed over time or compare it to last month's performance?
+
+============================================================
+[q06] What is the average order value?
+Latency: 8.46s
+Relevance: 10
+Graceful: None
+
+Agent response:
+The average order value across all completed orders is $8.86.
+
+This suggests customers are typically buying one or two items per order, which is pretty standard for a quick-service sandwich shop. If you're looking to increase this metric, you might consider bundling popular items or introducing combo deals that encourage larger purchases.
+
+============================================================
+[q09] How many customers do we have per loyalty status?
+Latency: 16.17s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffle Shop has 76 bronze, 67 silver, 39 gold, and 18 platinum customers. Bronze is the largest group by far, making up about 38% of the customer base. The loyalty program shows a healthy distribution across tiers, though there's room to grow the higher tiers. Would you like to see how these customers are distributed across different order channels or product categories?
+
+============================================================
+[q10] What were the top 3 selling products last month?
+Latency: 27.7s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Lemonade and Side Salad tied as the top sellers last month with 25 units each, followed by Veggie Jaffle at 21 units. It's interesting to see beverages and sides matching main products in volume — this could indicate customers are adding these items as popular complements to their orders. Would you like to see how this compares to the same period last year?
+

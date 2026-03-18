@@ -1,0 +1,170 @@
+[
+  {
+    "question_id": "q01",
+    "question": "What are the top 5 products by revenue?",
+    "category": "ranking",
+    "latency": 19.71,
+    "error": null,
+    "agent_text": "Spicy Beef Jaffle leads by revenue at $5,324, followed closely by BBQ Chicken Jaffle at $5,030. The top 5 products together account for about 40% of total revenue, showing strong concentration in savory meat-based options. The Breakfast Jaffle at $4,285 suggests morning sales are healthy too.\n\nWould you like to see how these products perform across different order channels?",
+    "sql_queries": [
+      "SELECT p.product_name, SUM(oi.quantity * oi.unit_price) AS revenue\nFROM orders o\nJOIN order_items oi ON o.order_id = oi.order_id\nJOIN products p ON oi.product_id = p.product_id\nWHERE o.status = 'completed'\nGROUP BY p.product_name\nORDER BY revenue DESC\nLIMIT 5"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Answers the question with specific revenue data for top 5 products but lacks complete ranking and has no chart despite asking about a trend/ranking",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": 10,
+    "has_chart": true,
+    "chart_type": "bar",
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q02",
+    "question": "How many orders do we have in total?",
+    "category": "aggregation",
+    "latency": 8.02,
+    "error": null,
+    "agent_text": "Jaffle Shop has processed 2,645 completed orders in total. That's a healthy baseline \u2014 would you like to see how that's distributed across product categories or customer loyalty tiers?",
+    "sql_queries": [
+      "SELECT COUNT(DISTINCT o.order_id) AS total_orders FROM orders o WHERE o.status = 'completed'"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Directly answers the question with accurate data but includes unnecessary labels like 'ANSWER:' and 'FOLLOW-UP:' which deduct 2 points.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": null,
+    "has_chart": false,
+    "chart_type": null,
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q03",
+    "question": "How has order volume trended over time?",
+    "category": "time_series",
+    "latency": 31.89,
+    "error": null,
+    "agent_text": "Order volume grew steadily from March to October 2025, peaking at 115 orders in October before dipping to 86 in February 2026. The recent decline is worth monitoring \u2014 it could reflect seasonal patterns or early signs of churn.\n\nWould you like to break this down by order channel to see where the drop is coming from?",
+    "sql_queries": [
+      "SELECT DATE_TRUNC('month', o.order_date) AS month, COUNT(DISTINCT o.order_id) AS order_count FROM orders o WHERE o.status = 'completed' AND o.order_date >= NOW() - INTERVAL '12 months' GROUP BY month ORDER BY month ASC"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Response answers the question with relevant data but lacks a chart for trend visualization, and uses a follow-up label which triggered a deduction.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": 10,
+    "has_chart": true,
+    "chart_type": "line",
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q04",
+    "question": "Which customers have placed the most orders?",
+    "category": "ranking",
+    "latency": 19.59,
+    "error": null,
+    "agent_text": "William Moore leads with 24 completed orders, followed closely by three customers tied at 22 orders each. The top 10 customers range from 19 to 24 orders, showing a small but consistent group of high-frequency buyers.\n\nThese loyal customers represent a significant portion of your repeat business. Would you like to see their total revenue contribution or identify any patterns in their ordering behavior?",
+    "sql_queries": [
+      "SELECT c.customer_id, c.first_name, c.last_name, COUNT(DISTINCT o.order_id) AS order_count\nFROM customers c\nJOIN orders o ON c.customer_id = o.customer_id\nWHERE o.status = 'completed'\nGROUP BY c.customer_id, c.first_name, c.last_name\nORDER BY order_count DESC\nLIMIT 10"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Directly answers the question with specific customer data but lacks a visual chart for the ranking comparison.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": 5,
+    "has_chart": true,
+    "chart_type": "bar",
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q05",
+    "question": "What is the revenue split by product category?",
+    "category": "composition",
+    "latency": 22.68,
+    "error": null,
+    "agent_text": "Jaffles generate the majority of revenue at 56%, followed by Beverages at 23%. Desserts and Sides make up the remaining 21% combined.\n\nThe dominance of Jaffles in revenue makes sense given they're the core product, but the strong Beverages showing suggests customers often pair drinks with their meals. Would you like to see how this revenue split has changed over time or compare it to last month's performance?",
+    "sql_queries": [
+      "SELECT p.category, SUM(oi.quantity * oi.unit_price) AS revenue\nFROM orders o\nJOIN order_items oi ON o.order_id = oi.order_id\nJOIN products p ON oi.product_id = p.product_id\nWHERE o.status = 'completed'\nGROUP BY p.category\nORDER BY revenue DESC"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Directly answers the question with specific revenue percentages by product category, but lacks a chart for visual comparison despite discussing revenue trends.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": 10,
+    "has_chart": true,
+    "chart_type": "pie",
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q06",
+    "question": "What is the average order value?",
+    "category": "aggregation",
+    "latency": 8.46,
+    "error": null,
+    "agent_text": "The average order value across all completed orders is $8.86.\n\nThis suggests customers are typically buying one or two items per order, which is pretty standard for a quick-service sandwich shop. If you're looking to increase this metric, you might consider bundling popular items or introducing combo deals that encourage larger purchases.",
+    "sql_queries": [
+      "SELECT AVG(oi.quantity * oi.unit_price) AS avg_order_value\nFROM orders o\nJOIN order_items oi ON o.order_id = oi.order_id\nWHERE o.status = 'completed'"
+    ],
+    "relevance_score": 10,
+    "relevance_reason": "The response directly answers the question with accurate data and provides relevant context without any deductions.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": null,
+    "has_chart": false,
+    "chart_type": null,
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q09",
+    "question": "How many customers do we have per loyalty status?",
+    "category": "segmentation",
+    "latency": 16.17,
+    "error": null,
+    "agent_text": "Jaffle Shop has 76 bronze, 67 silver, 39 gold, and 18 platinum customers. Bronze is the largest group by far, making up about 38% of the customer base. The loyalty program shows a healthy distribution across tiers, though there's room to grow the higher tiers. Would you like to see how these customers are distributed across different order channels or product categories?",
+    "sql_queries": [
+      "SELECT loyalty_tier, COUNT(*) AS customer_count FROM customers GROUP BY loyalty_tier ORDER BY customer_count DESC"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Directly answers the question with accurate data but includes unnecessary follow-up suggestion and no chart for the comparison.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": 0,
+    "has_chart": false,
+    "chart_type": null,
+    "is_failure_case": false,
+    "failure_type": null
+  },
+  {
+    "question_id": "q10",
+    "question": "What were the top 3 selling products last month?",
+    "category": "ranking",
+    "latency": 27.7,
+    "error": null,
+    "agent_text": "Lemonade and Side Salad tied as the top sellers last month with 25 units each, followed by Veggie Jaffle at 21 units. It's interesting to see beverages and sides matching main products in volume \u2014 this could indicate customers are adding these items as popular complements to their orders. Would you like to see how this compares to the same period last year?",
+    "sql_queries": [
+      "SELECT p.product_name, SUM(oi.quantity) AS total_sold\nFROM orders o\nJOIN order_items oi ON o.order_id = oi.order_id\nJOIN products p ON oi.product_id = p.product_id\nWHERE o.status = 'completed'\n  AND o.order_date >= DATE_TRUNC('month', NOW()) - INTERVAL '1 month'\n  AND o.order_date < DATE_TRUNC('month', NOW())\nGROUP BY p.product_name\nORDER BY total_sold DESC\nLIMIT 3"
+    ],
+    "relevance_score": 7,
+    "relevance_reason": "Directly answers the question with accurate top 3 products and units sold, but lacks a chart for visual comparison despite discussing rankings.",
+    "graceful_failure_score": null,
+    "graceful_failure_reason": null,
+    "sql_success": true,
+    "chart_score": 10,
+    "has_chart": true,
+    "chart_type": "bar",
+    "is_failure_case": false,
+    "failure_type": null
+  }
+]

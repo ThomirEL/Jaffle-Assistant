@@ -103,7 +103,7 @@ AUTOMATIC DEDUCTIONS — apply these before scoring:
 Apply deductions first, then score the remaining content quality.
 Minimum score is 0.
 
-Respond ONLY with a JSON object (X is a nunmber from 0-10): {{"score": X, "reason": "one sentence explaining the score and any deductions applied"}}"""
+Respond ONLY with a JSON object (X is a number from 0-10): {{"score": X, "reason": "one sentence explaining the score and any deductions applied"}}"""
 
     raw = ask_judge(prompt, session_id=session_id)
     return parse_judge_json(raw)

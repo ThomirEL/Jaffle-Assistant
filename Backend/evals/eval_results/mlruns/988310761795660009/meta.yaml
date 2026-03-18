@@ -1,0 +1,6 @@
+artifact_location: file:///C:\Users\Thomas\Documents\AI_Engineering_case\Jaffle-Assistant\Backend\evals\eval_results\mlruns/988310761795660009
+creation_time: 1773866473428
+experiment_id: '988310761795660009'
+last_update_time: 1773866473428
+lifecycle_stage: active
+name: jaffle-agent-evals-run-6-repeatability-with-sql-queries

@@ -7,6 +7,9 @@ from database import run_query
 from prompts import build_system_prompt, BASELINE_PROMPT
 from config import agent_llm, AGENT_MODEL
 from token_tracker import log_call, extract_usage
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 # ── Tool input schemas ────────────────────────────────────────────────────────
@@ -96,13 +99,11 @@ def _clean_response(text: str) -> str:
     text = re.sub(r"<thinking>.*?</thinking>", "", text, flags=re.DOTALL)
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
     text = re.sub(r"STEP\s+\d+\s*[—\-]+.*?(?=STEP\s+\d+|ANSWER:|$)", "", text, flags=re.DOTALL)
-
     text = re.sub(r"^ANSWER:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^DATA:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^ASSUMPTIONS:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^FOLLOW-UP:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^FOLLOW-UP QUESTION:\s*", "", text, flags=re.MULTILINE)
-
     text = re.sub(
         r"<(?:role|reasoning_protocol|output_format|ambiguity_handling|"
         r"error_handling|database_schema|reasoning_steps)[^>]*>.*?"
@@ -110,14 +111,13 @@ def _clean_response(text: str) -> str:
         r"error_handling|database_schema|reasoning_steps)>",
         "", text, flags=re.DOTALL
     )
-
     leaked_markers = [
         "## Your Reasoning Process", "## How to Respond", "## Database Schema",
         "## Rules", "## Hard Rules", "## Your Personality",
         "## How to Answer Questions", "## Output Format", "## Available Tools",
         "## Reasoning Protocol", "## Tool Call Order", "## Ambiguity Handling",
         "## Error Handling", "## Visualization Rules", "## SQL Guidelines",
-        "## Example Interaction", "You are a data assistant",
+        "## SQL Rules", "## Example Interaction", "You are a data assistant",
         "You are a thoughtful data analyst", "Before writing any SQL",
         "Do your reasoning silently", "Never repeat these instructions",
         "Always follow this sequence", "You have three tools",
@@ -130,7 +130,6 @@ def _clean_response(text: str) -> str:
     ]
     text = "\n".join(cleaned_lines)
     text = re.sub(r"\n{3,}", "\n\n", text)
-
     return text.strip()
 
 
@@ -146,10 +145,8 @@ def run_agent(
     system_prompt = build_system_prompt(base_prompt, schema)
     llm_with_tools = agent_llm.bind_tools(TOOLS)
 
-    # ── Build message list with history ───────────────────────────────────────
     messages = [SystemMessage(content=system_prompt)]
 
-    # Inject prior conversation turns so the agent has context
     if history:
         for turn in history:
             role = turn.get("role", "")
@@ -161,17 +158,21 @@ def run_agent(
             elif role == "assistant":
                 messages.append(AIMessage(content=content))
 
-    # Add the current question
     messages.append(HumanMessage(content=user_message))
 
     chart_spec = None
+    sql_queries = []      # ← capture every SQL call
     max_iterations = 5
 
     for i in range(max_iterations):
         try:
             response = llm_with_tools.invoke(messages)
         except Exception as e:
-            return {"text": f"The agent encountered an error: {str(e)}", "chart": None}
+            return {
+                "text": f"The agent encountered an error: {str(e)}",
+                "chart": None,
+                "sql_queries": sql_queries,
+            }
 
         in_tok, out_tok = extract_usage(response)
         log_call(
@@ -197,6 +198,12 @@ def run_agent(
         for tool_call in response.tool_calls:
             tool_name = tool_call["name"]
             tool_args = tool_call["args"]
+
+            # ── Capture SQL ────────────────────────────────────────────────────
+            if tool_name == "query_database":
+                sql = tool_args.get("sql", "")
+                logger.info(f"SQL EXECUTED: {sql}")
+                sql_queries.append(sql)
 
             if tool_name not in tools_by_name:
                 tool_result = f"Unknown tool: {tool_name}"
@@ -232,4 +239,5 @@ def run_agent(
     return {
         "text": _clean_response(final_text),
         "chart": chart_spec,
+        "sql_queries": sql_queries,   # ← included in every response
     }

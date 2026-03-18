@@ -1,0 +1,85 @@
+Variant: sql_updated_baseline
+Session: sql_updated_baseline_214113
+
+============================================================
+[q01] What are the top 5 products by revenue?
+Latency: 24.02s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Spicy Beef Jaffle leads by revenue at $5,324, followed closely by BBQ Chicken Jaffle at $5,030. The top 5 products together account for about 40% of total revenue, showing strong concentration in savory meat-based options. The Breakfast Jaffle at $4,285 suggests morning sales are healthy but could be growing further.
+
+Would you like to see how these top products perform across different order channels?
+
+============================================================
+[q02] How many orders do we have in total?
+Latency: 21.88s
+Relevance: 10
+Graceful: None
+
+Agent response:
+Jaffle Shop has processed 2,645 completed orders in total. That's a healthy baseline — would you like to see how that's distributed across product categories or customer loyalty tiers?
+
+============================================================
+[q03] How has order volume trended over time?
+Latency: 39.69s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Order volume grew steadily from March to October 2025, peaking at 115 orders in October before dipping to 86 in February 2026. The recent decline is worth monitoring — it could reflect seasonal patterns or early signs of churn.
+
+Would you like to break this down by order channel to see where the drop is coming from?
+
+============================================================
+[q04] Which customers have placed the most orders?
+Latency: 23.56s
+Relevance: 7
+Graceful: None
+
+Agent response:
+William Moore leads with 24 completed orders, followed closely by three customers tied at 22 orders each. The top 10 customers range from 19 to 24 orders, showing a small but consistent group of high-frequency buyers.
+
+This concentrated top tier suggests strong loyalty among a core group of customers. Would you like to see how their order values compare, or explore what products they're ordering most frequently?
+
+============================================================
+[q05] What is the revenue split by product category?
+Latency: 26.99s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffles dominate revenue at 56%, followed by Beverages at 23%. Desserts and Sides make up the remaining 21%. The heavy reliance on jaffles suggests the core product is performing well, but there may be opportunity to grow the sides and desserts categories to diversify revenue streams. Would you like to see how this split has changed over time?
+
+============================================================
+[q06] What is the average order value?
+Latency: 7.51s
+Relevance: 7
+Graceful: None
+
+Agent response:
+The average order value for completed orders is $19.45.
+
+That's a solid baseline — would you like to see how this varies by product category or customer loyalty tier?
+
+============================================================
+[q09] How many customers do we have per loyalty status?
+Latency: 5.24s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffle Shop has 76 bronze, 67 silver, 39 gold, and 18 platinum customers. Bronze is the largest group by far, making up about 38% of the customer base. The loyalty program shows a healthy distribution across tiers, though the drop from silver to gold suggests there might be room to improve conversion to higher tiers. Would you like to see how these tiers compare in terms of order frequency or revenue?
+
+============================================================
+[q10] What were the top 3 selling products last month?
+Latency: 33.09s
+Relevance: 10
+Graceful: None
+
+Agent response:
+Mushroom & Brie Jaffle narrowly edged out Veggie Jaffle as the top seller last month, with both bringing in nearly $190 in revenue. Breakfast Jaffle rounded out the top 3 at $161.50.
+
+The close competition between the top two suggests customers have strong preferences for both vegetarian and premium options. Would you like to see how these compare to the same period last year?
+
