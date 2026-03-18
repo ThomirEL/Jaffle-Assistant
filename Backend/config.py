@@ -20,11 +20,12 @@ GROQ_JUDGE_MODEL = "llama-3.3-70b-versatile"   # used when PROVIDER = "groq"
 OPENROUTER_AGENT_MODEL = "arcee-ai/trinity-large-preview:free"   # used when PROVIDER = "openrouter"
 OPENROUTER_JUDGE_MODEL = "arcee-ai/trinity-large-preview:free"
 
-
+AGENT_MODEL = ""
 
 def make_llm(provider: str, temperature: float = 0):
     if provider == "groq":
         from langchain_groq import ChatGroq
+        AGENT_MODEL = GROQ_AGENT_MODEL
         return ChatGroq(
             model=GROQ_AGENT_MODEL if provider == AGENT_PROVIDER else GROQ_JUDGE_MODEL,
             temperature=temperature,
@@ -33,6 +34,7 @@ def make_llm(provider: str, temperature: float = 0):
 
     elif provider == "google":
         from langchain_google_genai import ChatGoogleGenerativeAI
+        AGENT_MODEL = GOOGLE_AGENT_MODEL
         return ChatGoogleGenerativeAI(
             model=GOOGLE_AGENT_MODEL if provider == AGENT_PROVIDER else GOOGLE_JUDGE_MODEL,
             temperature=temperature,
@@ -42,6 +44,7 @@ def make_llm(provider: str, temperature: float = 0):
 
     elif provider == "openrouter":
         from langchain_openrouter import ChatOpenRouter
+        AGENT_MODEL = OPENROUTER_AGENT_MODEL
         return ChatOpenRouter(
             model=OPENROUTER_AGENT_MODEL if provider == AGENT_PROVIDER else OPENROUTER_JUDGE_MODEL,
             temperature=temperature,

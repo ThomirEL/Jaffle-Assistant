@@ -27,28 +27,32 @@
       }
     },
     "2026-03-18": {
-      "total_requests": 477,
-      "total_input_tokens": 638786,
-      "total_output_tokens": 51365,
-      "total_tokens": 690151,
+      "total_requests": 548,
+      "total_input_tokens": 772119,
+      "total_output_tokens": 58007,
+      "total_tokens": 830126,
       "by_caller": {
         "agent": {
-          "requests": 288,
-          "tokens": 620620
+          "requests": 342,
+          "tokens": 754182
         },
         "judge": {
-          "requests": 189,
-          "tokens": 69531
+          "requests": 206,
+          "tokens": 75944
         }
       },
       "by_model": {
         "arcee-ai/trinity-large-preview:free": {
-          "requests": 471,
-          "tokens": 675585
+          "requests": 534,
+          "tokens": 797457
         },
         "unknown": {
           "requests": 6,
           "tokens": 14566
+        },
+        "": {
+          "requests": 8,
+          "tokens": 18103
         }
       }
     }
@@ -5804,6 +5808,645 @@
       "input_tokens": 342,
       "output_tokens": 33,
       "total_tokens": 375
+    },
+    {
+      "timestamp": "2026-03-18T19:50:10.867323",
+      "session_id": "sql_updated_baseline_194551",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2140,
+      "output_tokens": 159,
+      "total_tokens": 2299
+    },
+    {
+      "timestamp": "2026-03-18T19:50:17.526463",
+      "session_id": "sql_updated_baseline_194551",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2391,
+      "output_tokens": 111,
+      "total_tokens": 2502
+    },
+    {
+      "timestamp": "2026-03-18T19:50:19.390795",
+      "session_id": "sql_updated_baseline_194551",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2613,
+      "output_tokens": 57,
+      "total_tokens": 2670
+    },
+    {
+      "timestamp": "2026-03-18T19:50:28.038029",
+      "session_id": "sql_updated_baseline_194551",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 327,
+      "output_tokens": 28,
+      "total_tokens": 355
+    },
+    {
+      "timestamp": "2026-03-18T19:50:38.429168",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2139,
+      "output_tokens": 87,
+      "total_tokens": 2226
+    },
+    {
+      "timestamp": "2026-03-18T19:50:46.891773",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2359,
+      "output_tokens": 153,
+      "total_tokens": 2512
+    },
+    {
+      "timestamp": "2026-03-18T19:50:56.113869",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2663,
+      "output_tokens": 97,
+      "total_tokens": 2760
+    },
+    {
+      "timestamp": "2026-03-18T19:50:57.258397",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 366,
+      "output_tokens": 34,
+      "total_tokens": 400
+    },
+    {
+      "timestamp": "2026-03-18T19:51:09.183447",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2138,
+      "output_tokens": 39,
+      "total_tokens": 2177
+    },
+    {
+      "timestamp": "2026-03-18T19:51:10.879989",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2219,
+      "output_tokens": 38,
+      "total_tokens": 2257
+    },
+    {
+      "timestamp": "2026-03-18T19:51:14.664727",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 306,
+      "output_tokens": 46,
+      "total_tokens": 352
+    },
+    {
+      "timestamp": "2026-03-18T19:51:22.498189",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2138,
+      "output_tokens": 72,
+      "total_tokens": 2210
+    },
+    {
+      "timestamp": "2026-03-18T19:51:43.394085",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2535,
+      "output_tokens": 355,
+      "total_tokens": 2890
+    },
+    {
+      "timestamp": "2026-03-18T19:51:45.847925",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3235,
+      "output_tokens": 71,
+      "total_tokens": 3306
+    },
+    {
+      "timestamp": "2026-03-18T19:51:47.081312",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 339,
+      "output_tokens": 40,
+      "total_tokens": 379
+    },
+    {
+      "timestamp": "2026-03-18T19:52:08.049706",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2137,
+      "output_tokens": 89,
+      "total_tokens": 2226
+    },
+    {
+      "timestamp": "2026-03-18T19:52:24.571820",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2554,
+      "output_tokens": 346,
+      "total_tokens": 2900
+    },
+    {
+      "timestamp": "2026-03-18T19:52:32.640837",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3239,
+      "output_tokens": 74,
+      "total_tokens": 3313
+    },
+    {
+      "timestamp": "2026-03-18T19:52:33.866607",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 341,
+      "output_tokens": 30,
+      "total_tokens": 371
+    },
+    {
+      "timestamp": "2026-03-18T19:52:42.746176",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2138,
+      "output_tokens": 81,
+      "total_tokens": 2219
+    },
+    {
+      "timestamp": "2026-03-18T19:52:54.046329",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2318,
+      "output_tokens": 140,
+      "total_tokens": 2458
+    },
+    {
+      "timestamp": "2026-03-18T19:53:01.775312",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2597,
+      "output_tokens": 112,
+      "total_tokens": 2709
+    },
+    {
+      "timestamp": "2026-03-18T19:53:05.049276",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 380,
+      "output_tokens": 28,
+      "total_tokens": 408
+    },
+    {
+      "timestamp": "2026-03-18T19:53:12.456720",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2136,
+      "output_tokens": 36,
+      "total_tokens": 2172
+    },
+    {
+      "timestamp": "2026-03-18T19:53:16.462512",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2244,
+      "output_tokens": 36,
+      "total_tokens": 2280
+    },
+    {
+      "timestamp": "2026-03-18T19:53:19.954608",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2329,
+      "output_tokens": 42,
+      "total_tokens": 2371
+    },
+    {
+      "timestamp": "2026-03-18T19:53:21.645682",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 308,
+      "output_tokens": 29,
+      "total_tokens": 337
+    },
+    {
+      "timestamp": "2026-03-18T19:53:32.150528",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2139,
+      "output_tokens": 39,
+      "total_tokens": 2178
+    },
+    {
+      "timestamp": "2026-03-18T19:53:37.733249",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2279,
+      "output_tokens": 89,
+      "total_tokens": 2368
+    },
+    {
+      "timestamp": "2026-03-18T19:53:39.175798",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 358,
+      "output_tokens": 31,
+      "total_tokens": 389
+    },
+    {
+      "timestamp": "2026-03-18T19:53:50.183178",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2140,
+      "output_tokens": 175,
+      "total_tokens": 2315
+    },
+    {
+      "timestamp": "2026-03-18T19:53:58.924241",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2407,
+      "output_tokens": 111,
+      "total_tokens": 2518
+    },
+    {
+      "timestamp": "2026-03-18T19:54:02.084358",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2573,
+      "output_tokens": 90,
+      "total_tokens": 2663
+    },
+    {
+      "timestamp": "2026-03-18T19:54:06.080772",
+      "session_id": "sql_updated_baseline_195032",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 360,
+      "output_tokens": 31,
+      "total_tokens": 391
+    },
+    {
+      "timestamp": "2026-03-18T19:54:18.329257",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2139,
+      "output_tokens": 87,
+      "total_tokens": 2226
+    },
+    {
+      "timestamp": "2026-03-18T19:54:44.685760",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2359,
+      "output_tokens": 177,
+      "total_tokens": 2536
+    },
+    {
+      "timestamp": "2026-03-18T19:54:55.133737",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2711,
+      "output_tokens": 74,
+      "total_tokens": 2785
+    },
+    {
+      "timestamp": "2026-03-18T19:54:56.333376",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 343,
+      "output_tokens": 37,
+      "total_tokens": 380
+    },
+    {
+      "timestamp": "2026-03-18T19:55:10.434834",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2138,
+      "output_tokens": 39,
+      "total_tokens": 2177
+    },
+    {
+      "timestamp": "2026-03-18T19:55:15.397369",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2219,
+      "output_tokens": 38,
+      "total_tokens": 2257
+    },
+    {
+      "timestamp": "2026-03-18T19:55:17.104932",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 306,
+      "output_tokens": 40,
+      "total_tokens": 346
+    },
+    {
+      "timestamp": "2026-03-18T19:55:25.492311",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2138,
+      "output_tokens": 72,
+      "total_tokens": 2210
+    },
+    {
+      "timestamp": "2026-03-18T19:55:50.675800",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2535,
+      "output_tokens": 355,
+      "total_tokens": 2890
+    },
+    {
+      "timestamp": "2026-03-18T19:55:54.247601",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3235,
+      "output_tokens": 68,
+      "total_tokens": 3303
+    },
+    {
+      "timestamp": "2026-03-18T19:55:56.322608",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 336,
+      "output_tokens": 37,
+      "total_tokens": 373
+    },
+    {
+      "timestamp": "2026-03-18T19:56:09.382604",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2137,
+      "output_tokens": 89,
+      "total_tokens": 2226
+    },
+    {
+      "timestamp": "2026-03-18T19:56:54.408616",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2554,
+      "output_tokens": 379,
+      "total_tokens": 2933
+    },
+    {
+      "timestamp": "2026-03-18T19:57:02.163202",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3305,
+      "output_tokens": 86,
+      "total_tokens": 3391
+    },
+    {
+      "timestamp": "2026-03-18T19:57:03.325146",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 353,
+      "output_tokens": 31,
+      "total_tokens": 384
+    },
+    {
+      "timestamp": "2026-03-18T19:57:20.291425",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2138,
+      "output_tokens": 93,
+      "total_tokens": 2231
+    },
+    {
+      "timestamp": "2026-03-18T19:57:51.595805",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2330,
+      "output_tokens": 140,
+      "total_tokens": 2470
+    },
+    {
+      "timestamp": "2026-03-18T19:58:00.471809",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2609,
+      "output_tokens": 99,
+      "total_tokens": 2708
+    },
+    {
+      "timestamp": "2026-03-18T19:58:13.989661",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 367,
+      "output_tokens": 38,
+      "total_tokens": 405
+    },
+    {
+      "timestamp": "2026-03-18T19:58:23.415914",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2136,
+      "output_tokens": 58,
+      "total_tokens": 2194
+    },
+    {
+      "timestamp": "2026-03-18T19:58:32.348599",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2243,
+      "output_tokens": 63,
+      "total_tokens": 2306
+    },
+    {
+      "timestamp": "2026-03-18T19:58:37.219620",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 329,
+      "output_tokens": 28,
+      "total_tokens": 357
+    },
+    {
+      "timestamp": "2026-03-18T19:58:46.990844",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2139,
+      "output_tokens": 39,
+      "total_tokens": 2178
+    },
+    {
+      "timestamp": "2026-03-18T19:58:49.946724",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2279,
+      "output_tokens": 89,
+      "total_tokens": 2368
+    },
+    {
+      "timestamp": "2026-03-18T19:58:51.082734",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 358,
+      "output_tokens": 33,
+      "total_tokens": 391
+    },
+    {
+      "timestamp": "2026-03-18T19:59:05.870633",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2140,
+      "output_tokens": 157,
+      "total_tokens": 2297
+    },
+    {
+      "timestamp": "2026-03-18T18:59:11.658099",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 1872,
+      "output_tokens": 60,
+      "total_tokens": 1932
+    },
+    {
+      "timestamp": "2026-03-18T19:59:16.501252",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2389,
+      "output_tokens": 135,
+      "total_tokens": 2524
+    },
+    {
+      "timestamp": "2026-03-18T18:59:24.737094",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 2065,
+      "output_tokens": 172,
+      "total_tokens": 2237
+    },
+    {
+      "timestamp": "2026-03-18T19:59:27.102625",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2659,
+      "output_tokens": 91,
+      "total_tokens": 2750
+    },
+    {
+      "timestamp": "2026-03-18T19:59:31.367535",
+      "session_id": "sql_updated_baseline_195410",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 361,
+      "output_tokens": 34,
+      "total_tokens": 395
+    },
+    {
+      "timestamp": "2026-03-18T18:59:38.644117",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 2391,
+      "output_tokens": 67,
+      "total_tokens": 2458
+    },
+    {
+      "timestamp": "2026-03-18T18:59:57.451154",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 1874,
+      "output_tokens": 83,
+      "total_tokens": 1957
+    },
+    {
+      "timestamp": "2026-03-18T19:00:23.671011",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 1876,
+      "output_tokens": 80,
+      "total_tokens": 1956
+    },
+    {
+      "timestamp": "2026-03-18T20:35:41.406740",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 1874,
+      "output_tokens": 55,
+      "total_tokens": 1929
+    },
+    {
+      "timestamp": "2026-03-18T20:36:07.845301",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 2254,
+      "output_tokens": 355,
+      "total_tokens": 2609
+    },
+    {
+      "timestamp": "2026-03-18T20:36:12.781259",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "",
+      "input_tokens": 2957,
+      "output_tokens": 68,
+      "total_tokens": 3025
     }
   ]
 }

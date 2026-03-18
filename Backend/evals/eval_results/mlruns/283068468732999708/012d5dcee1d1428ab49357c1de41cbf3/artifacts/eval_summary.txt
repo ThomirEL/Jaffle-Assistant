@@ -1,21 +1,21 @@
 Variant: sql_updated_baseline
-Session: sql_updated_baseline_195410
+Session: sql_updated_baseline_194551
 
 ============================================================
 [q01] What are the top 5 products by revenue?
-Latency: 44.83s
+Latency: 33.35s
 Relevance: 7
 Graceful: None
 
 Agent response:
-The Spicy Beef Jaffle is your top revenue generator at $5,324, followed closely by the BBQ Chicken Jaffle at $5,030. The top 5 products together account for about 40% of total revenue, showing strong concentration in your savory meat-based offerings.
+Spicy Beef Jaffle leads by revenue at $5,324, followed closely by BBQ Chicken Jaffle at $5,030. The top 5 products are all savory options, with no sweet or breakfast items breaking into the top tier. This suggests our core customer base strongly prefers hearty, protein-rich jaffles.
 
-Would you like to see how these products perform across different order channels or loyalty tiers?
+Would you like to see how these top products perform across different order channels?
 
 ============================================================
 [q02] How many orders do we have in total?
-Latency: 15.06s
-Relevance: 10
+Latency: 6.47s
+Relevance: 7
 Graceful: None
 
 Agent response:
@@ -23,7 +23,7 @@ Jaffle Shop has processed 2,645 completed orders in total. That's a healthy base
 
 ============================================================
 [q03] How has order volume trended over time?
-Latency: 33.13s
+Latency: 34.03s
 Relevance: 7
 Graceful: None
 
@@ -34,31 +34,31 @@ Would you like to break this down by order channel to see where the drop is comi
 
 ============================================================
 [q04] Which customers have placed the most orders?
-Latency: 61.83s
-Relevance: 7
+Latency: 61.24s
+Relevance: 10
 Graceful: None
 
 Agent response:
-William Moore leads with 24 completed orders, followed closely by three customers tied at 22 orders each. The top 10 customers range from 19 to 24 orders, showing a small but consistent group of high-frequency buyers.
+William Moore leads with 24 completed orders, followed closely by Jacob Martinez, Ella Adams, and Olivia Smith who are all tied at 22 orders each. The top 10 customers range from 19 to 24 orders, showing a small but consistent group of high-frequency buyers.
 
-This concentrated loyalty at the top suggests these customers could be ideal for a VIP program or early access to new menu items. Would you like to see their total spending to identify the highest-value customers?
+These loyal customers represent a significant portion of your repeat business. Would you like to see what their favorite products are or how their order values compare to the average customer?
 
 ============================================================
 [q05] What is the revenue split by product category?
-Latency: 53.14s
+Latency: 23.74s
 Relevance: 7
 Graceful: None
 
 Agent response:
 Jaffles dominate revenue at 56%, followed by Beverages at 23%. Desserts and Sides make up the remaining 21% combined.
 
-The pie chart shows our core product — the Jaffle sandwich — drives the majority of sales, which makes sense given it's our signature offering. Beverages provide a strong secondary revenue stream, while desserts and sides are smaller but still meaningful contributors.
+The pie chart shows our core product (Jaffles) drives the majority of revenue, which makes sense given they're our main offering. Beverages provide a strong secondary stream, while Desserts and Sides are smaller but still meaningful contributors.
 
 Would you like to see how this revenue split has changed over time, or compare it to customer counts by category?
 
 ============================================================
 [q06] What is the average order value?
-Latency: 14.35s
+Latency: 18.79s
 Relevance: 10
 Graceful: None
 
@@ -69,19 +69,19 @@ This suggests customers are typically buying one or two items per order, which i
 
 ============================================================
 [q09] How many customers do we have per loyalty status?
-Latency: 8.72s
+Latency: 6.16s
 Relevance: 7
 Graceful: None
 
 Agent response:
-Jaffle Shop has 76 bronze, 67 silver, 39 gold, and 18 platinum customers. Bronze is the largest group by far, making up about 38% of the customer base. The loyalty program shows a healthy spread across tiers, though the drop from silver to gold suggests there might be room to improve conversion to higher tiers. Would you like to see how these customers are distributed across different order channels or product categories?
+Bronze is our largest loyalty tier with 76 customers, followed by silver with 67, gold with 39, and platinum with 18. The distribution shows most customers are in the entry-level tiers, which suggests there's room to grow the higher tiers through targeted engagement. Would you like to see how these tiers compare in terms of order frequency or revenue?
 
 ============================================================
 [q10] What were the top 3 selling products last month?
-Latency: 32.0s
+Latency: 28.57s
 Relevance: 7
 Graceful: None
 
 Agent response:
-Mushroom & Brie Jaffle was the top seller last month, generating $190 in revenue, just ahead of Veggie Jaffle at $189. Breakfast Jaffle rounded out the top three at $161.50. The close competition between the top two suggests both are customer favorites — you might consider promoting them together or checking if there's room to optimize pricing or portion sizes. Would you like to see how these compare to the same period last year?
+Mushroom & Brie Jaffle narrowly edged out Veggie Jaffle as the top seller last month, with Breakfast Jaffle close behind. These three vegetarian options dominated sales, suggesting strong demand for meat-free choices. Would you like to see how these compare to the same period last year?
 

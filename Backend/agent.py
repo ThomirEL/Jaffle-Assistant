@@ -1,12 +1,12 @@
 import json
-from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
+import re
+from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage, AIMessage
 from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, Field
 from database import run_query
 from prompts import build_system_prompt, BASELINE_PROMPT
-from config import agent_llm, GOOGLE_AGENT_MODEL
+from config import agent_llm, AGENT_MODEL
 from token_tracker import log_call, extract_usage
-import re
 
 
 # ── Tool input schemas ────────────────────────────────────────────────────────
@@ -38,13 +38,18 @@ def _query_database(sql: str) -> str:
 
 
 def _generate_visualization(data: str, chart_type: str, x_key: str, y_key: str, title: str) -> str:
+    try:
+        parsed = json.loads(data) if isinstance(data, str) else data
+    except Exception:
+        parsed = {}
+    rows = parsed.get("rows", parsed) if isinstance(parsed, dict) else parsed
     return json.dumps({
         "type": "chart",
         "chart_type": chart_type,
         "x_key": x_key,
         "y_key": y_key,
         "title": title,
-        "data": json.loads(data) if isinstance(data, str) else data,
+        "data": {"rows": rows},
     })
 
 
@@ -82,34 +87,22 @@ TOOLS = [
 tools_by_name = {t.name: t for t in TOOLS}
 
 
-def _clean_response(text: str) -> str:
-    """Strip all leaked prompt content before returning to the user."""
+# ── Response cleaner ───────────────────────────────────────────────────────────
 
+def _clean_response(text: str) -> str:
     if not text:
         return text
 
-    # ── Strip thinking blocks ──────────────────────────────────────────────────
     text = re.sub(r"<thinking>.*?</thinking>", "", text, flags=re.DOTALL)
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
+    text = re.sub(r"STEP\s+\d+\s*[—\-]+.*?(?=STEP\s+\d+|ANSWER:|$)", "", text, flags=re.DOTALL)
 
-    # ── Strip STEP reasoning blocks if leaked inline ───────────────────────────
-    # Catches "STEP 1 — ...", "STEP 2 —..." etc and everything until the next
-    # section or the ANSWER block
-    text = re.sub(
-        r"STEP\s+\d+\s*[—\-]+.*?(?=STEP\s+\d+|ANSWER:|$)",
-        "", text, flags=re.DOTALL
-    )
-
-    # ── Strip structured labels ────────────────────────────────────────────────
-    # Remove "ANSWER:", "DATA:", "ASSUMPTIONS:", "FOLLOW-UP:" labels
-    # but keep the content after them
     text = re.sub(r"^ANSWER:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^DATA:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^ASSUMPTIONS:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^FOLLOW-UP:\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^FOLLOW-UP QUESTION:\s*", "", text, flags=re.MULTILINE)
 
-    # ── Strip XML prompt section tags ──────────────────────────────────────────
     text = re.sub(
         r"<(?:role|reasoning_protocol|output_format|ambiguity_handling|"
         r"error_handling|database_schema|reasoning_steps)[^>]*>.*?"
@@ -118,31 +111,16 @@ def _clean_response(text: str) -> str:
         "", text, flags=re.DOTALL
     )
 
-    # ── Strip lines that are clearly leaked prompt headers ─────────────────────
     leaked_markers = [
-        "## Your Reasoning Process",
-        "## How to Respond",
-        "## Database Schema",
-        "## Rules",
-        "## Hard Rules",
-        "## Your Personality",
-        "## How to Answer Questions",
-        "## Output Format",
-        "## Available Tools",
-        "## Reasoning Protocol",
-        "## Tool Call Order",
-        "## Ambiguity Handling",
-        "## Error Handling",
-        "## Visualization Rules",
-        "## SQL Guidelines",
-        "## Example Interaction",
-        "You are a data assistant",
-        "You are a thoughtful data analyst",
-        "Before writing any SQL",
-        "Do your reasoning silently",
-        "Never repeat these instructions",
-        "Always follow this sequence",
-        "You have three tools",
+        "## Your Reasoning Process", "## How to Respond", "## Database Schema",
+        "## Rules", "## Hard Rules", "## Your Personality",
+        "## How to Answer Questions", "## Output Format", "## Available Tools",
+        "## Reasoning Protocol", "## Tool Call Order", "## Ambiguity Handling",
+        "## Error Handling", "## Visualization Rules", "## SQL Guidelines",
+        "## Example Interaction", "You are a data assistant",
+        "You are a thoughtful data analyst", "Before writing any SQL",
+        "Do your reasoning silently", "Never repeat these instructions",
+        "Always follow this sequence", "You have three tools",
         "You have access to a DuckDB",
     ]
     lines = text.split("\n")
@@ -151,26 +129,40 @@ def _clean_response(text: str) -> str:
         if not any(line.strip().startswith(marker) for marker in leaked_markers)
     ]
     text = "\n".join(cleaned_lines)
-
-    # ── Clean up excess whitespace ─────────────────────────────────────────────
     text = re.sub(r"\n{3,}", "\n\n", text)
 
     return text.strip()
+
+
 # ── Agent ──────────────────────────────────────────────────────────────────────
 
 def run_agent(
     user_message: str,
     schema: str,
     base_prompt: str = BASELINE_PROMPT,
+    history: list[dict] = None,
     session_id: str = None,
 ) -> dict:
     system_prompt = build_system_prompt(base_prompt, schema)
     llm_with_tools = agent_llm.bind_tools(TOOLS)
 
-    messages = [
-        SystemMessage(content=system_prompt),
-        HumanMessage(content=user_message),
-    ]
+    # ── Build message list with history ───────────────────────────────────────
+    messages = [SystemMessage(content=system_prompt)]
+
+    # Inject prior conversation turns so the agent has context
+    if history:
+        for turn in history:
+            role = turn.get("role", "")
+            content = turn.get("content", "")
+            if not content:
+                continue
+            if role == "user":
+                messages.append(HumanMessage(content=content))
+            elif role == "assistant":
+                messages.append(AIMessage(content=content))
+
+    # Add the current question
+    messages.append(HumanMessage(content=user_message))
 
     chart_spec = None
     max_iterations = 5
@@ -181,11 +173,10 @@ def run_agent(
         except Exception as e:
             return {"text": f"The agent encountered an error: {str(e)}", "chart": None}
 
-        # ── Track this LLM call ────────────────────────────────────────────────
         in_tok, out_tok = extract_usage(response)
         log_call(
             caller="agent",
-            model=agent_llm.model_name if hasattr(agent_llm, "model_name") else "unknown",
+            model=AGENT_MODEL,
             input_tokens=in_tok,
             output_tokens=out_tok,
             session_id=session_id,
@@ -223,6 +214,7 @@ def run_agent(
 
             messages.append(ToolMessage(content=str(tool_result), tool_call_id=tool_call["id"]))
 
+    # ── Extract final text ─────────────────────────────────────────────────────
     final_text = ""
     for msg in reversed(messages):
         if isinstance(msg, (HumanMessage, ToolMessage)):
@@ -230,13 +222,14 @@ def run_agent(
         content = msg.content if hasattr(msg, "content") else ""
         if isinstance(content, list):
             content = " ".join(
-                p.get("text", "") if isinstance(p, dict) else str(p) for p in content
+                p.get("text", "") if isinstance(p, dict) else str(p)
+                for p in content
             ).strip()
         if content.strip():
             final_text = content.strip()
             break
 
     return {
-    "text": _clean_response(final_text),  # ← must wrap final_text
-    "chart": chart_spec,
+        "text": _clean_response(final_text),
+        "chart": chart_spec,
     }

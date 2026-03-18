@@ -1,8 +1,9 @@
 artifact_uri: file:///C:\Users\Thomas\Documents\AI_Engineering_case\Jaffle-Assistant\Backend\evals\eval_results\mlruns/283068468732999708/106430594d5846e18f93282aad9744b4/artifacts
+deleted_time: 1773865825194
 end_time: 1773859398285
 entry_point_name: ''
 experiment_id: '283068468732999708'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: 106430594d5846e18f93282aad9744b4
 run_name: sql_updated_baseline
 run_uuid: 106430594d5846e18f93282aad9744b4

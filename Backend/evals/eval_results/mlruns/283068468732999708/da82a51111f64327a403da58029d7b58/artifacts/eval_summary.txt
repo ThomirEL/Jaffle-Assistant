@@ -1,0 +1,89 @@
+Variant: sql_updated_baseline
+Session: sql_updated_baseline_195032
+
+============================================================
+[q01] What are the top 5 products by revenue?
+Latency: 23.84s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Spicy Beef Jaffle leads by revenue at $5,324, followed closely by BBQ Chicken Jaffle at $5,030. The top 5 products together account for about 40% of total revenue, showing strong concentration in savory meat-based options. The Breakfast Jaffle at $4,285 rounds out the top 5, suggesting breakfast items have good traction but still trail the lunch/dinner favorites.
+
+Would you like to see how these products perform across different order channels?
+
+============================================================
+[q02] How many orders do we have in total?
+Latency: 9.62s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffle Shop has processed 2,645 completed orders in total. That's a healthy baseline — would you like to see how that's distributed across product categories or customer loyalty tiers?
+
+============================================================
+[q03] How has order volume trended over time?
+Latency: 27.16s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Order volume grew steadily from March to October 2025, peaking at 115 orders in October before declining to 86 in February 2026. The recent drop could reflect seasonal patterns or early signs of churn — worth monitoring to see if this continues.
+
+Would you like to break this down by order channel to see where the decline is coming from?
+
+============================================================
+[q04] Which customers have placed the most orders?
+Latency: 41.55s
+Relevance: 7
+Graceful: None
+
+Agent response:
+William Moore leads with 24 completed orders, followed closely by three customers tied at 22 orders each. The top 10 customers range from 19 to 24 orders, showing a small but consistent group of high-frequency buyers.
+
+This concentrated loyalty among a few customers is great for retention — would you like to see what products these top customers are ordering most often?
+
+============================================================
+[q05] What is the revenue split by product category?
+Latency: 23.89s
+Relevance: 7
+Graceful: None
+
+Agent response:
+Jaffles dominate revenue at 45%, followed by Beverages at 18%. Desserts and Sides make up the remaining 37% combined.
+
+The pie chart shows that our core product — Jaffles — drives nearly half of all revenue. Beverages are the second-largest contributor, which makes sense as they're often purchased alongside main items. The smaller shares for Desserts and Sides suggest potential for growth in those categories through promotions or bundling strategies.
+
+Would you like to see how this revenue split has changed over time, or explore which specific products within each category are performing best?
+
+============================================================
+[q06] What is the average order value?
+Latency: 10.9s
+Relevance: 10
+Graceful: None
+
+Agent response:
+The average order value for completed orders is $19.45.
+
+This gives us a good baseline for understanding typical customer spend. Would you like to see how this varies by product category or customer loyalty tier?
+
+============================================================
+[q09] How many customers do we have per loyalty status?
+Latency: 12.08s
+Relevance: 10
+Graceful: None
+
+Agent response:
+Jaffle Shop has 76 bronze, 67 silver, 39 gold, and 18 platinum customers. Bronze is the largest group by far, making up about 38% of the customer base. The loyalty program shows a healthy spread across tiers, though the drop from silver to gold suggests there might be room to improve conversion to higher tiers. Would you like to see how these customers are distributed across different order channels or product categories?
+
+============================================================
+[q10] What were the top 3 selling products last month?
+Latency: 18.91s
+Relevance: 10
+Graceful: None
+
+Agent response:
+Mushroom & Brie Jaffle was the top seller last month with $190 in revenue, just edging out Veggie Jaffle at $189. Breakfast Jaffle rounded out the top 3 at $161.50.
+
+The top three products are generating very similar revenue, suggesting they're all core menu items with strong demand. Would you like to see how these compare to the rest of the menu or look at their performance over a longer time period?
+
