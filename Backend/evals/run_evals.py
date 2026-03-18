@@ -3,59 +3,29 @@ import time
 import mlflow
 from pathlib import Path
 
-# ── Path setup ────────────────────────────────────────────────────────────────
+# Setup
 BACKEND_DIR  = Path(__file__).parent.parent
-MLFLOW_DIR   = BACKEND_DIR / "mlruns"
-RESULTS_FILE = Path(__file__).parent / "eval_results.json"
-SUMMARY_FILE = Path(__file__).parent / "eval_summary.txt"
+MLFLOW_DIR   = BACKEND_DIR / "evals" / "eval_results" / "mlruns"
+RESULTS_FILE = Path(__file__).parent / "eval_results" / "eval_results.json"
+SUMMARY_FILE = Path(__file__).parent / "eval_results" / "eval_summary.txt"
 
 sys.path.append(str(BACKEND_DIR))
 mlflow.set_tracking_uri(f"file:///{MLFLOW_DIR}")
 
-# ── Imports ───────────────────────────────────────────────────────────────────
+# Imports (after sys.path setup)
 from database import get_schema
 from agent import run_agent
-from prompts import BASELINE_PROMPT, REASONING_PROMPT
 from evals.multi_agent import run_multi_agent, run_reasoning_multi_agent
-from evals.eval_questions import EVAL_QUESTIONS
+from evals.eval_configs.eval_questions import EVAL_QUESTIONS
 from evals.judge import score_response
-from config import agent_llm, judge_llm
 from evals.helpers.usage_tracker import UsageTracker
 from evals.helpers.aggregation import aggregate
 from evals.helpers.reporting import save_json_results, save_summary_report, print_metrics_summary
+from evals.eval_configs.evals_variants import PROMPT_VARIANTS, AGENT_VARIANTS, UPDATED_BASELINE, SQL_UPDATED_BASELINE_PROMPT
 
 TRACKER = UsageTracker()
 
-
-PROMPT_VARIANTS = [
-    {
-        "name": "baseline",
-        "agent_type": "single",
-        "description": "Single agent with standard business-assistant prompt",
-        "system_prompt": BASELINE_PROMPT,
-    },
-    {
-        "name": "reasoning",
-        "agent_type": "single",
-        "description": "Single agent with structured <thinking> reasoning protocol",
-        "system_prompt": REASONING_PROMPT,
-    },
-    {
-        "name": "multi_agent",
-        "agent_type": "multi",
-        "description": "Three sub-agents: SQL specialist, chart specialist, insight specialist",
-        "system_prompt": None,
-    },
-    {
-        "name": "reasoning_multi_agent",
-        "agent_type": "reasoning_multi",
-        "description": "Three sub-agents, each with <thinking> reasoning before acting",
-        "system_prompt": None,
-    },
-]
-
-
-# ── Runner ────────────────────────────────────────────────────────────────────
+SQL_REPEATED_TIMES = 3
 
 def run_question(variant: dict, question_config: dict, schema: str, session_id: str) -> dict:
     """
@@ -115,9 +85,6 @@ def run_question(variant: dict, question_config: dict, schema: str, session_id: 
     }
 
 
-
-
-# In main — generate session_id and print summary at the end
 def main():
     from token_tracker import print_summary
     from datetime import datetime
@@ -127,10 +94,21 @@ def main():
 
     mlflow.set_tracking_uri(f"file:///{MLFLOW_DIR}")
     print(f"MLflow logging to: {MLFLOW_DIR}")
-    mlflow.set_experiment("jaffle-agent-evals-run-2")
+    mlflow.set_experiment("jaffle-agent-evals-run-5-repeatability")
 
-    for variant in PROMPT_VARIANTS:
-        # Use variant name + timestamp as session ID
+    TYPE_OF_RUN = "sql_updated_baseline"  # Change this to "agent" or "prompt" to run those variants instead of the updated baseline prompt
+
+    if TYPE_OF_RUN == "agent":
+        variants_to_run = AGENT_VARIANTS
+    elif TYPE_OF_RUN == "prompt":
+        variants_to_run = PROMPT_VARIANTS
+    elif TYPE_OF_RUN == "updated_baseline":
+        variants_to_run = UPDATED_BASELINE
+    elif TYPE_OF_RUN == "sql_updated_baseline":
+        variants_to_run = SQL_UPDATED_BASELINE_PROMPT * SQL_REPEATED_TIMES  # Repeat the list 3 times
+    
+
+    for variant in variants_to_run:                              # Change this to AGENT_VARIANTS to run agent-based evals or PROMPT_VARIANTS to run prompt-based eval
         session_id = f"{variant['name']}_{datetime.now().strftime('%H%M%S')}"
 
         print(f"\n{'='*60}")
@@ -153,6 +131,9 @@ def main():
 
             results = []
             for q in EVAL_QUESTIONS:
+                if TYPE_OF_RUN == "sql_updated_baseline" and ('q' not in q["id"]):
+                    continue  # Only run SQL questions for the SQL-updated baseline variant
+
                 print(f"  {q['id']} [{q['category']}]: {q['question'][:55]}...")
                 result = run_question(variant, q, schema, session_id=session_id)
                 results.append(result)
