@@ -1,7 +1,5 @@
 import sys
-import os
 import time
-import json
 import mlflow
 from pathlib import Path
 
@@ -21,9 +19,13 @@ from prompts import BASELINE_PROMPT, REASONING_PROMPT
 from evals.multi_agent import run_multi_agent, run_reasoning_multi_agent
 from evals.eval_questions import EVAL_QUESTIONS
 from evals.judge import score_response
+from config import agent_llm, judge_llm
+from evals.helpers.usage_tracker import UsageTracker
+from evals.helpers.aggregation import aggregate
+from evals.helpers.reporting import save_json_results, save_summary_report, print_metrics_summary
 
+TRACKER = UsageTracker()
 
-# ── Prompt variants ───────────────────────────────────────────────────────────
 
 PROMPT_VARIANTS = [
     {
@@ -47,7 +49,7 @@ PROMPT_VARIANTS = [
     {
         "name": "reasoning_multi_agent",
         "agent_type": "reasoning_multi",
-        "description": "Three sub-agents each with <thinking> reasoning before acting",
+        "description": "Three sub-agents, each with <thinking> reasoning before acting",
         "system_prompt": None,
     },
 ]
@@ -55,90 +57,87 @@ PROMPT_VARIANTS = [
 
 # ── Runner ────────────────────────────────────────────────────────────────────
 
-def run_question(variant: dict, question_config: dict, schema: str) -> dict:
-    print(f"    Running question {question_config['id']} with variant {variant['name']}...")
+def run_question(variant: dict, question_config: dict, schema: str, session_id: str) -> dict:
+    """
+    Execute a single evaluation question against a variant.
+    
+    Args:
+        variant: Variant configuration dictionary
+        question_config: Question configuration from EVAL_QUESTIONS
+        schema: Database schema information
+        session_id: Session identifier for tracking
+        
+    Returns:
+        Dictionary with question result and scores
+    """
     start = time.time()
     try:
         if variant["agent_type"] == "multi":
             response = run_multi_agent(question_config["question"], schema)
-
         elif variant["agent_type"] == "reasoning_multi":
             response = run_reasoning_multi_agent(question_config["question"], schema)
-
         elif variant["agent_type"] == "single":
             response = run_agent(
                 question_config["question"],
                 schema,
                 base_prompt=variant["system_prompt"],
+                session_id=session_id,
             )
-
         else:
             raise ValueError(f"Unknown agent_type: {variant['agent_type']}")
 
         latency = time.time() - start
         error = None
-
     except Exception as e:
         response = {"text": "", "chart": None}
         latency = time.time() - start
         error = str(e)
-        print(f"    Error running question {question_config['id']}: {error}")
+        print(f"  Error running question {question_config['id']}: {error}")
+
+    scores = score_response(
+        question_config["question"],
+        response,
+        question_config,
+        session_id=session_id,
+    )
 
     print(f"    → text: {response.get('text', 'EMPTY')}")
     print(f"    → chart: {'yes' if response.get('chart') else 'no'}")
 
-    scores = score_response(question_config["question"], response, question_config)
-
     return {
-        "question_id":  question_config["id"],
-        "question":     question_config["question"],
-        "category":     question_config["category"],
-        "latency":      round(latency, 2),
-        "error":        error,
-        "agent_text":   response.get("text", ""),
+        "question_id": question_config["id"],
+        "question":    question_config["question"],
+        "category":    question_config["category"],
+        "latency":     round(latency, 2),
+        "error":       error,
+        "agent_text":  response.get("text", ""),
         **scores,
     }
 
 
-def aggregate(results: list) -> dict:
-    standard = [r for r in results if not r["is_failure_case"]]
-    failures  = [r for r in results if r["is_failure_case"]]
-
-    def safe_avg(values):
-        vals = [v for v in values if v is not None]
-        return round(sum(vals) / len(vals), 2) if vals else 0.0
-
-    return {
-        "avg_relevance":              safe_avg([r["relevance_score"] for r in standard]),
-        "sql_success_rate":           round(sum(1 for r in standard if r["sql_success"]) / max(len(standard), 1), 2),
-        "chart_accuracy":             safe_avg([r["chart_score"] for r in standard if r["chart_score"] is not None]),
-        "avg_latency_standard":       safe_avg([r["latency"] for r in standard]),
-        "avg_graceful_failure_score": safe_avg([r["graceful_failure_score"] for r in failures]),
-        "avg_latency_failure":        safe_avg([r["latency"] for r in failures]),
-        "graceful_ambiguous":         safe_avg([r["graceful_failure_score"] for r in failures if r["failure_type"] == "ambiguous"]),
-        "graceful_out_of_scope":      safe_avg([r["graceful_failure_score"] for r in failures if r["failure_type"] == "out_of_scope"]),
-        "graceful_bad_sql":           safe_avg([r["graceful_failure_score"] for r in failures if r["failure_type"] in ("nonexistent_table", "missing_data")]),
-        "graceful_adversarial":       safe_avg([r["graceful_failure_score"] for r in failures if r["failure_type"] in ("prompt_injection", "sql_injection")]),
-        "error_rate":                 round(sum(1 for r in results if r["error"]) / max(len(results), 1), 2),
-    }
 
 
+# In main — generate session_id and print summary at the end
 def main():
+    from token_tracker import print_summary
+    from datetime import datetime
+
     print("Loading schema...")
     schema = get_schema()
 
-    if not schema:
-        print("ERROR: Schema is empty. Check your database path in database.py")
-        return
-
+    mlflow.set_tracking_uri(f"file:///{MLFLOW_DIR}")
     print(f"MLflow logging to: {MLFLOW_DIR}")
-    mlflow.set_experiment("jaffle-agent-evals")
+    mlflow.set_experiment("jaffle-agent-evals-run-2")
 
     for variant in PROMPT_VARIANTS:
+        # Use variant name + timestamp as session ID
+        session_id = f"{variant['name']}_{datetime.now().strftime('%H%M%S')}"
+
         print(f"\n{'='*60}")
-        print(f"Variant : {variant['name']}")
-        print(f"Type    : {variant['agent_type']}")
-        print(f"Desc    : {variant['description']}")
+        print(f"Variant  : {variant['name']}")
+        print(f"Type     : {variant['agent_type']}")
+        print(f"Desc     : {variant['description']}")
+        print(f"Session  : {session_id}")
         print(f"{'='*60}")
 
         with mlflow.start_run(run_name=variant["name"]) as run:
@@ -149,13 +148,13 @@ def main():
                 "agent_type":    variant["agent_type"],
                 "description":   variant["description"],
                 "num_questions": len(EVAL_QUESTIONS),
-                "judge_model":   "groq/llama-3.3-70b-versatile",
+                "session_id":    session_id,
             })
 
             results = []
             for q in EVAL_QUESTIONS:
                 print(f"  {q['id']} [{q['category']}]: {q['question'][:55]}...")
-                result = run_question(variant, q, schema)
+                result = run_question(variant, q, schema, session_id=session_id)
                 results.append(result)
 
                 step = int(q["id"][1:])
@@ -163,46 +162,29 @@ def main():
                     mlflow.log_metric("question_relevance", result["relevance_score"], step=step)
                 if result["graceful_failure_score"] is not None:
                     mlflow.log_metric("question_graceful", result["graceful_failure_score"], step=step)
-                print(f"Sleeping for 15s to avoid rate limits...")
-                time.sleep(15)  # avoid rate limits
+
+                time.sleep(4)
 
             metrics = aggregate(results)
             mlflow.log_metrics(metrics)
 
-            # Save JSON artifact
-            with open(RESULTS_FILE, "w") as f:
-                json.dump(results, f, indent=2, default=str)
+            # Save results and summary reports
+            save_json_results(results, RESULTS_FILE)
             mlflow.log_artifact(str(RESULTS_FILE))
 
-            # Save readable summary artifact
-            with open(SUMMARY_FILE, "w", encoding="utf-8") as f:
-                f.write(f"Variant: {variant['name']}\n")
-                f.write(f"Description: {variant['description']}\n\n")
-                for r in results:
-                    f.write(f"{'='*60}\n")
-                    f.write(f"[{r['question_id']}] {r['question']}\n")
-                    f.write(f"Category : {r['category']}\n")
-                    f.write(f"Latency  : {r['latency']}s\n")
-                    f.write(f"Relevance: {r.get('relevance_score')}\n")
-                    f.write(f"Graceful : {r.get('graceful_failure_score')}\n")
-                    f.write(f"\nAgent response:\n{r.get('agent_text', 'EMPTY')}\n")
-                    if r.get("error"):
-                        f.write(f"\nERROR: {r['error']}\n")
-                    f.write("\n")
+            save_summary_report(results, variant["name"], session_id, SUMMARY_FILE)
             mlflow.log_artifact(str(SUMMARY_FILE))
 
-            print(f"\n  avg_relevance:          {metrics['avg_relevance']}")
-            print(f"  sql_success_rate:       {metrics['sql_success_rate']:.0%}")
-            print(f"  avg_graceful_failure:   {metrics['avg_graceful_failure_score']}")
-            print(f"    ambiguous:            {metrics['graceful_ambiguous']}")
-            print(f"    out_of_scope:         {metrics['graceful_out_of_scope']}")
-            print(f"    bad_sql:              {metrics['graceful_bad_sql']}")
-            print(f"    adversarial:          {metrics['graceful_adversarial']}")
-            print(f"  avg_latency:            {metrics['avg_latency_standard']}s")
-            print(f"  error_rate:             {metrics['error_rate']:.0%}")
+            # Print metrics summary
+            print_metrics_summary(metrics)
 
+        # Print token summary after each variant
+        print_summary(session_id=session_id)
+
+    # Final summary across entire run
     print("\n\nAll variants done.")
-    print(f"Run: mlflow ui --backend-store-uri {MLFLOW_DIR}")
+    print_summary()
+    print("Run `mlflow ui --backend-store-uri ./mlruns` to compare.")
 
 
 if __name__ == "__main__":

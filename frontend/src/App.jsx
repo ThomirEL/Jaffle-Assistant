@@ -36,6 +36,18 @@ export default function App() {
         body: JSON.stringify({ message: text }),
       })
 
+      // Handle specific error codes
+      if (res.status === 504) {
+        setMessages(prev =>
+          prev.map(m =>
+            m.id === loadingMsg.id
+              ? { ...m, loading: false, text: "That query took too long — try asking something more specific, like 'order volume by month this year'." }
+              : m
+          )
+        )
+        return
+      }
+
       if (!res.ok) throw new Error(`Server error: ${res.status}`)
 
       const data = await res.json()
@@ -191,7 +203,7 @@ export default function App() {
             letterSpacing: '0.04em',
           }}>
             Powered by<br />
-            <span style={{ color: 'var(--accent)', fontWeight: 500 }}>Gemini 2.5 Flash</span><br />
+            <span style={{ color: 'var(--accent)', fontWeight: 500 }}>Free Model</span><br />
             <span style={{ color: 'var(--text-sec)', fontSize: 9 }}>LangChain · DuckDB</span>
           </div>
         </div>

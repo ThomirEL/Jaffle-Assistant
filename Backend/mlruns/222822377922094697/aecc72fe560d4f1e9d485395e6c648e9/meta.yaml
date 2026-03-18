@@ -1,0 +1,15 @@
+artifact_uri: file:///C:\Users\Thomas\Documents\AI_Engineering_case\Jaffle-Assistant\Backend\mlruns/222822377922094697/aecc72fe560d4f1e9d485395e6c648e9/artifacts
+end_time: 1773822568247
+entry_point_name: ''
+experiment_id: '222822377922094697'
+lifecycle_stage: active
+run_id: aecc72fe560d4f1e9d485395e6c648e9
+run_name: reasoning
+run_uuid: aecc72fe560d4f1e9d485395e6c648e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773822528745
+status: 3
+tags: []
+user_id: Thomas

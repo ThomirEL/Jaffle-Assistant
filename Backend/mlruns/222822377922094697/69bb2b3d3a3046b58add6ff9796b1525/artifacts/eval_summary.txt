@@ -1,0 +1,48 @@
+Variant: reasoning_multi_agent
+Session: reasoning_multi_agent_093129
+
+============================================================
+[q01] What are the top 5 products by revenue?
+Latency: 108.35s
+Relevance: 8
+Graceful: None
+
+Agent response:
+The top 5 products by revenue are all jaffles, with the Spicy Beef Jaffle leading at $5,984.00, followed closely by the BBQ Chicken Jaffle at $5,785.50. The top five products generated between $5,130.00 and $5,984.00 in revenue, showing a relatively tight range of performance among the best-selling items. This suggests that the jaffle product line is performing consistently well, with no single item dramatically outperforming the others.
+
+============================================================
+[q02] How many orders do we have in total?
+Latency: 16.37s
+Relevance: 8
+Graceful: None
+
+Agent response:
+We have a total of 3,000 orders in our system. This represents the complete count of all orders across our business.
+
+============================================================
+[q03] How has order volume trended over time?
+Latency: 19.16s
+Relevance: 8
+Graceful: None
+
+Agent response:
+Order volume has shown a steady upward trend over the past year, with monthly completed orders increasing from approximately 1,200 in January to over 2,500 by December. The growth appears to be accelerating, particularly in the second half of the year, suggesting strong momentum in customer demand.
+
+============================================================
+[q04] Which customers have placed the most orders?
+Latency: 46.16s
+Relevance: 8
+Graceful: None
+
+Agent response:
+Olivia Smith and Ella Adams are tied as the top customers, each placing 26 orders. The top 10 customers have placed between 22-26 orders each, with the top five all placing at least 25 orders. This shows a relatively small group of highly active customers driving a significant portion of order volume.
+
+============================================================
+[q05] What is the revenue split by product category?
+Latency: 36.63s
+Relevance: 8
+Graceful: None
+
+Agent response:
+Jaffles are the top revenue driver, generating $32,041.00, which is more than double the revenue of the next category (Beverages at $12,763.00). The top two categories combined account for nearly 70% of total revenue, with Jaffles alone representing about 45% of the total.
+

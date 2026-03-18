@@ -1,0 +1,48 @@
+Variant: multi_agent
+Session: multi_agent_092928
+
+============================================================
+[q01] What are the top 5 products by revenue?
+Latency: 18.33s
+Relevance: 8
+Graceful: None
+
+Agent response:
+The top 5 products by revenue are Spicy Beef Jaffle ($5,984), BBQ Chicken Jaffle ($5,786), Mushroom & Brie Jaffle ($5,410), Veggie Jaffle ($5,184), and Breakfast Jaffle ($5,130).
+
+============================================================
+[q02] How many orders do we have in total?
+Latency: 6.22s
+Relevance: 8
+Graceful: None
+
+Agent response:
+We have a total of 3,000 orders.
+
+============================================================
+[q03] How has order volume trended over time?
+Latency: 19.81s
+Relevance: 8
+Graceful: None
+
+Agent response:
+Order volume has shown significant fluctuations, with peak days reaching 10-11 orders on August 15, 2024 and October 21, 2024. The data reveals seasonal patterns across the 2-year period from January 2024 to February 2026, with daily orders ranging from 1 to 11.
+
+============================================================
+[q04] Which customers have placed the most orders?
+Latency: 15.6s
+Relevance: 8
+Graceful: None
+
+Agent response:
+Ella Adams and Olivia Smith are tied for the most orders, each having placed 26 orders.
+
+============================================================
+[q05] What is the revenue split by product category?
+Latency: 22.36s
+Relevance: 8
+Graceful: None
+
+Agent response:
+Beverages generate the highest revenue at $32,041, accounting for 48% of total sales. The next highest category is Beverages at $12,763, followed by Desserts at $8,207 and Sides at $5,530.
+

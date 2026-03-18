@@ -1,0 +1,3271 @@
+{
+  "daily": {
+    "2026-03-17": {
+      "total_requests": 162,
+      "total_input_tokens": 168348,
+      "total_output_tokens": 26565,
+      "total_tokens": 194913,
+      "by_caller": {
+        "agent": {
+          "requests": 90,
+          "tokens": 168312
+        },
+        "judge": {
+          "requests": 72,
+          "tokens": 26601
+        }
+      },
+      "by_model": {
+        "arcee-ai/trinity-large-preview:free": {
+          "requests": 148,
+          "tokens": 158543
+        },
+        "unknown": {
+          "requests": 14,
+          "tokens": 36370
+        }
+      }
+    },
+    "2026-03-18": {
+      "total_requests": 195,
+      "total_input_tokens": 230770,
+      "total_output_tokens": 25072,
+      "total_tokens": 255842,
+      "by_caller": {
+        "agent": {
+          "requests": 103,
+          "tokens": 221299
+        },
+        "judge": {
+          "requests": 92,
+          "tokens": 34543
+        }
+      },
+      "by_model": {
+        "arcee-ai/trinity-large-preview:free": {
+          "requests": 189,
+          "tokens": 241276
+        },
+        "unknown": {
+          "requests": 6,
+          "tokens": 14566
+        }
+      }
+    }
+  },
+  "sessions": [
+    {
+      "timestamp": "2026-03-17T21:52:57.393247",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1236,
+      "output_tokens": 95,
+      "total_tokens": 1331
+    },
+    {
+      "timestamp": "2026-03-17T21:53:01.617440",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1476,
+      "output_tokens": 191,
+      "total_tokens": 1667
+    },
+    {
+      "timestamp": "2026-03-17T21:53:08.289172",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1856,
+      "output_tokens": 151,
+      "total_tokens": 2007
+    },
+    {
+      "timestamp": "2026-03-17T21:53:09.431949",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 275,
+      "output_tokens": 21,
+      "total_tokens": 296
+    },
+    {
+      "timestamp": "2026-03-17T21:53:14.785423",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 28,
+      "total_tokens": 1263
+    },
+    {
+      "timestamp": "2026-03-17T21:53:16.119957",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1305,
+      "output_tokens": 42,
+      "total_tokens": 1347
+    },
+    {
+      "timestamp": "2026-03-17T21:53:17.211401",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 165,
+      "output_tokens": 23,
+      "total_tokens": 188
+    },
+    {
+      "timestamp": "2026-03-17T21:53:22.836210",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 61,
+      "total_tokens": 1296
+    },
+    {
+      "timestamp": "2026-03-17T21:54:07.446115",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2084,
+      "output_tokens": 846,
+      "total_tokens": 2930
+    },
+    {
+      "timestamp": "2026-03-17T21:54:08.654524",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 143,
+      "output_tokens": 29,
+      "total_tokens": 172
+    },
+    {
+      "timestamp": "2026-03-17T21:54:20.893766",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1234,
+      "output_tokens": 76,
+      "total_tokens": 1310
+    },
+    {
+      "timestamp": "2026-03-17T21:54:22.173097",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 884,
+      "output_tokens": 19,
+      "total_tokens": 903
+    },
+    {
+      "timestamp": "2026-03-17T21:54:30.042510",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 84,
+      "total_tokens": 1319
+    },
+    {
+      "timestamp": "2026-03-17T21:54:36.529694",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1418,
+      "output_tokens": 140,
+      "total_tokens": 1558
+    },
+    {
+      "timestamp": "2026-03-17T21:54:40.254186",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1697,
+      "output_tokens": 140,
+      "total_tokens": 1837
+    },
+    {
+      "timestamp": "2026-03-17T21:54:41.421313",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 262,
+      "output_tokens": 25,
+      "total_tokens": 287
+    },
+    {
+      "timestamp": "2026-03-17T21:54:46.512091",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1233,
+      "output_tokens": 31,
+      "total_tokens": 1264
+    },
+    {
+      "timestamp": "2026-03-17T21:54:50.582636",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1310,
+      "output_tokens": 55,
+      "total_tokens": 1365
+    },
+    {
+      "timestamp": "2026-03-17T21:54:51.931640",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 176,
+      "output_tokens": 31,
+      "total_tokens": 207
+    },
+    {
+      "timestamp": "2026-03-17T21:55:00.404233",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1236,
+      "output_tokens": 40,
+      "total_tokens": 1276
+    },
+    {
+      "timestamp": "2026-03-17T21:55:07.182784",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1377,
+      "output_tokens": 84,
+      "total_tokens": 1461
+    },
+    {
+      "timestamp": "2026-03-17T21:55:08.178249",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 207,
+      "output_tokens": 25,
+      "total_tokens": 232
+    },
+    {
+      "timestamp": "2026-03-17T21:55:20.445105",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1237,
+      "output_tokens": 162,
+      "total_tokens": 1399
+    },
+    {
+      "timestamp": "2026-03-17T21:55:29.957749",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1531,
+      "output_tokens": 172,
+      "total_tokens": 1703
+    },
+    {
+      "timestamp": "2026-03-17T21:55:33.416919",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1875,
+      "output_tokens": 99,
+      "total_tokens": 1974
+    },
+    {
+      "timestamp": "2026-03-17T21:55:37.776646",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 224,
+      "output_tokens": 24,
+      "total_tokens": 248
+    },
+    {
+      "timestamp": "2026-03-17T21:55:47.658644",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1231,
+      "output_tokens": 110,
+      "total_tokens": 1341
+    },
+    {
+      "timestamp": "2026-03-17T21:55:48.988065",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 272,
+      "output_tokens": 36,
+      "total_tokens": 308
+    },
+    {
+      "timestamp": "2026-03-17T21:55:56.195324",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1230,
+      "output_tokens": 90,
+      "total_tokens": 1320
+    },
+    {
+      "timestamp": "2026-03-17T21:55:57.392712",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 245,
+      "output_tokens": 38,
+      "total_tokens": 283
+    },
+    {
+      "timestamp": "2026-03-17T21:56:05.450530",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1232,
+      "output_tokens": 90,
+      "total_tokens": 1322
+    },
+    {
+      "timestamp": "2026-03-17T21:56:07.280136",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 247,
+      "output_tokens": 37,
+      "total_tokens": 284
+    },
+    {
+      "timestamp": "2026-03-17T21:56:20.418548",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 51,
+      "total_tokens": 1286
+    },
+    {
+      "timestamp": "2026-03-17T21:56:21.415124",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 226,
+      "output_tokens": 26,
+      "total_tokens": 252
+    },
+    {
+      "timestamp": "2026-03-17T21:56:29.837085",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1232,
+      "output_tokens": 54,
+      "total_tokens": 1286
+    },
+    {
+      "timestamp": "2026-03-17T21:56:32.877788",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 225,
+      "output_tokens": 21,
+      "total_tokens": 246
+    },
+    {
+      "timestamp": "2026-03-17T21:56:50.815516",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1232,
+      "output_tokens": 87,
+      "total_tokens": 1319
+    },
+    {
+      "timestamp": "2026-03-17T21:56:52.065997",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 258,
+      "output_tokens": 30,
+      "total_tokens": 288
+    },
+    {
+      "timestamp": "2026-03-17T21:57:00.354253",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1233,
+      "output_tokens": 53,
+      "total_tokens": 1286
+    },
+    {
+      "timestamp": "2026-03-17T21:57:01.219184",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2048,
+      "output_tokens": 1,
+      "total_tokens": 2049
+    },
+    {
+      "timestamp": "2026-03-17T21:57:18.262962",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 190,
+      "total_tokens": 1425
+    },
+    {
+      "timestamp": "2026-03-17T21:57:19.277396",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 368,
+      "output_tokens": 21,
+      "total_tokens": 389
+    },
+    {
+      "timestamp": "2026-03-17T21:57:25.680725",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 24,
+      "total_tokens": 1259
+    },
+    {
+      "timestamp": "2026-03-17T21:57:29.094903",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3651,
+      "output_tokens": 59,
+      "total_tokens": 3710
+    },
+    {
+      "timestamp": "2026-03-17T21:57:30.370645",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 204,
+      "output_tokens": 41,
+      "total_tokens": 245
+    },
+    {
+      "timestamp": "2026-03-17T21:57:36.934891",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1235,
+      "output_tokens": 76,
+      "total_tokens": 1311
+    },
+    {
+      "timestamp": "2026-03-17T21:57:38.431267",
+      "session_id": "baseline_215249",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1357,
+      "output_tokens": 47,
+      "total_tokens": 1404
+    },
+    {
+      "timestamp": "2026-03-17T21:57:39.618237",
+      "session_id": "baseline_215249",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 188,
+      "output_tokens": 29,
+      "total_tokens": 217
+    },
+    {
+      "timestamp": "2026-03-17T21:57:54.144069",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1450,
+      "output_tokens": 454,
+      "total_tokens": 1904
+    },
+    {
+      "timestamp": "2026-03-17T21:57:55.548206",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 578,
+      "output_tokens": 29,
+      "total_tokens": 607
+    },
+    {
+      "timestamp": "2026-03-17T21:58:00.439595",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2048,
+      "output_tokens": 1,
+      "total_tokens": 2049
+    },
+    {
+      "timestamp": "2026-03-17T21:58:01.210287",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2048,
+      "output_tokens": 1,
+      "total_tokens": 2049
+    },
+    {
+      "timestamp": "2026-03-17T21:58:32.845418",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1449,
+      "output_tokens": 572,
+      "total_tokens": 2021
+    },
+    {
+      "timestamp": "2026-03-17T21:58:34.313157",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 695,
+      "output_tokens": 51,
+      "total_tokens": 746
+    },
+    {
+      "timestamp": "2026-03-17T21:59:09.503920",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1448,
+      "output_tokens": 642,
+      "total_tokens": 2090
+    },
+    {
+      "timestamp": "2026-03-17T21:59:10.672094",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 764,
+      "output_tokens": 31,
+      "total_tokens": 795
+    },
+    {
+      "timestamp": "2026-03-17T21:59:39.249178",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1449,
+      "output_tokens": 435,
+      "total_tokens": 1884
+    },
+    {
+      "timestamp": "2026-03-17T21:59:40.868490",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 559,
+      "output_tokens": 30,
+      "total_tokens": 589
+    },
+    {
+      "timestamp": "2026-03-17T22:00:20.446796",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1447,
+      "output_tokens": 387,
+      "total_tokens": 1834
+    },
+    {
+      "timestamp": "2026-03-17T22:00:22.174213",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 508,
+      "output_tokens": 24,
+      "total_tokens": 532
+    },
+    {
+      "timestamp": "2026-03-17T22:01:10.131105",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1450,
+      "output_tokens": 367,
+      "total_tokens": 1817
+    },
+    {
+      "timestamp": "2026-03-17T22:01:11.389214",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 491,
+      "output_tokens": 35,
+      "total_tokens": 526
+    },
+    {
+      "timestamp": "2026-03-17T22:02:02.062875",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1451,
+      "output_tokens": 519,
+      "total_tokens": 1970
+    },
+    {
+      "timestamp": "2026-03-17T22:02:20.726472",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2065,
+      "output_tokens": 133,
+      "total_tokens": 2198
+    },
+    {
+      "timestamp": "2026-03-17T22:02:22.542657",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 258,
+      "output_tokens": 29,
+      "total_tokens": 287
+    },
+    {
+      "timestamp": "2026-03-17T22:03:10.592268",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1445,
+      "output_tokens": 511,
+      "total_tokens": 1956
+    },
+    {
+      "timestamp": "2026-03-17T22:03:23.761872",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 673,
+      "output_tokens": 33,
+      "total_tokens": 706
+    },
+    {
+      "timestamp": "2026-03-17T22:03:45.309540",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1444,
+      "output_tokens": 248,
+      "total_tokens": 1692
+    },
+    {
+      "timestamp": "2026-03-17T22:03:52.303742",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 403,
+      "output_tokens": 34,
+      "total_tokens": 437
+    },
+    {
+      "timestamp": "2026-03-17T22:04:30.167464",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1446,
+      "output_tokens": 307,
+      "total_tokens": 1753
+    },
+    {
+      "timestamp": "2026-03-17T22:04:39.292496",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 464,
+      "output_tokens": 45,
+      "total_tokens": 509
+    },
+    {
+      "timestamp": "2026-03-17T22:05:15.309005",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1449,
+      "output_tokens": 246,
+      "total_tokens": 1695
+    },
+    {
+      "timestamp": "2026-03-17T22:05:17.024986",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 421,
+      "output_tokens": 21,
+      "total_tokens": 442
+    },
+    {
+      "timestamp": "2026-03-17T22:05:47.977566",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1446,
+      "output_tokens": 258,
+      "total_tokens": 1704
+    },
+    {
+      "timestamp": "2026-03-17T22:05:52.572764",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 429,
+      "output_tokens": 46,
+      "total_tokens": 475
+    },
+    {
+      "timestamp": "2026-03-17T22:06:50.374866",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1446,
+      "output_tokens": 386,
+      "total_tokens": 1832
+    },
+    {
+      "timestamp": "2026-03-17T22:06:51.553607",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 557,
+      "output_tokens": 21,
+      "total_tokens": 578
+    },
+    {
+      "timestamp": "2026-03-17T22:07:14.104915",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1447,
+      "output_tokens": 299,
+      "total_tokens": 1746
+    },
+    {
+      "timestamp": "2026-03-17T22:07:15.082808",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 479,
+      "output_tokens": 23,
+      "total_tokens": 502
+    },
+    {
+      "timestamp": "2026-03-17T22:07:54.574137",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1449,
+      "output_tokens": 491,
+      "total_tokens": 1940
+    },
+    {
+      "timestamp": "2026-03-17T22:07:55.698035",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 669,
+      "output_tokens": 25,
+      "total_tokens": 694
+    },
+    {
+      "timestamp": "2026-03-17T22:08:22.196773",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1449,
+      "output_tokens": 272,
+      "total_tokens": 1721
+    },
+    {
+      "timestamp": "2026-03-17T22:08:23.936571",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 417,
+      "output_tokens": 18,
+      "total_tokens": 435
+    },
+    {
+      "timestamp": "2026-03-17T22:08:58.889173",
+      "session_id": "reasoning_215744",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1449,
+      "output_tokens": 463,
+      "total_tokens": 1912
+    },
+    {
+      "timestamp": "2026-03-17T22:09:00.223876",
+      "session_id": "reasoning_215744",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 605,
+      "output_tokens": 44,
+      "total_tokens": 649
+    },
+    {
+      "timestamp": "2026-03-17T22:09:29.258163",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 178,
+      "output_tokens": 31,
+      "total_tokens": 209
+    },
+    {
+      "timestamp": "2026-03-17T22:09:40.438336",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 135,
+      "output_tokens": 14,
+      "total_tokens": 149
+    },
+    {
+      "timestamp": "2026-03-17T22:10:39.651749",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 184,
+      "output_tokens": 24,
+      "total_tokens": 208
+    },
+    {
+      "timestamp": "2026-03-17T22:11:05.071632",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 171,
+      "output_tokens": 26,
+      "total_tokens": 197
+    },
+    {
+      "timestamp": "2026-03-17T22:11:34.113120",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 183,
+      "output_tokens": 23,
+      "total_tokens": 206
+    },
+    {
+      "timestamp": "2026-03-17T22:11:53.070873",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 143,
+      "output_tokens": 45,
+      "total_tokens": 188
+    },
+    {
+      "timestamp": "2026-03-17T22:12:10.802288",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 167,
+      "output_tokens": 20,
+      "total_tokens": 187
+    },
+    {
+      "timestamp": "2026-03-17T22:12:46.489995",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 156,
+      "output_tokens": 32,
+      "total_tokens": 188
+    },
+    {
+      "timestamp": "2026-03-17T22:13:01.174818",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 180,
+      "output_tokens": 40,
+      "total_tokens": 220
+    },
+    {
+      "timestamp": "2026-03-17T22:13:15.390581",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 191,
+      "output_tokens": 18,
+      "total_tokens": 209
+    },
+    {
+      "timestamp": "2026-03-17T22:14:23.642279",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 192,
+      "output_tokens": 26,
+      "total_tokens": 218
+    },
+    {
+      "timestamp": "2026-03-17T22:14:31.068613",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 208,
+      "output_tokens": 30,
+      "total_tokens": 238
+    },
+    {
+      "timestamp": "2026-03-17T22:14:41.873532",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 202,
+      "output_tokens": 34,
+      "total_tokens": 236
+    },
+    {
+      "timestamp": "2026-03-17T22:14:55.168879",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 192,
+      "output_tokens": 31,
+      "total_tokens": 223
+    },
+    {
+      "timestamp": "2026-03-17T22:15:04.605138",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 204,
+      "output_tokens": 34,
+      "total_tokens": 238
+    },
+    {
+      "timestamp": "2026-03-17T22:15:32.677496",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 190,
+      "output_tokens": 41,
+      "total_tokens": 231
+    },
+    {
+      "timestamp": "2026-03-17T22:18:30.231204",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 311,
+      "output_tokens": 24,
+      "total_tokens": 335
+    },
+    {
+      "timestamp": "2026-03-17T22:18:40.297830",
+      "session_id": "multi_agent_220904",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 167,
+      "output_tokens": 18,
+      "total_tokens": 185
+    },
+    {
+      "timestamp": "2026-03-17T22:19:12.077632",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 200,
+      "output_tokens": 22,
+      "total_tokens": 222
+    },
+    {
+      "timestamp": "2026-03-17T22:19:41.723456",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 149,
+      "output_tokens": 20,
+      "total_tokens": 169
+    },
+    {
+      "timestamp": "2026-03-17T22:20:17.006867",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 175,
+      "output_tokens": 22,
+      "total_tokens": 197
+    },
+    {
+      "timestamp": "2026-03-17T22:21:16.395248",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 230,
+      "output_tokens": 26,
+      "total_tokens": 256
+    },
+    {
+      "timestamp": "2026-03-17T22:21:52.629535",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 198,
+      "output_tokens": 29,
+      "total_tokens": 227
+    },
+    {
+      "timestamp": "2026-03-17T22:22:32.045017",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 160,
+      "output_tokens": 18,
+      "total_tokens": 178
+    },
+    {
+      "timestamp": "2026-03-17T22:22:56.336316",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 197,
+      "output_tokens": 28,
+      "total_tokens": 225
+    },
+    {
+      "timestamp": "2026-03-17T22:23:19.074797",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 201,
+      "output_tokens": 27,
+      "total_tokens": 228
+    },
+    {
+      "timestamp": "2026-03-17T22:23:33.723613",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 198,
+      "output_tokens": 32,
+      "total_tokens": 230
+    },
+    {
+      "timestamp": "2026-03-17T22:23:45.172133",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 200,
+      "output_tokens": 40,
+      "total_tokens": 240
+    },
+    {
+      "timestamp": "2026-03-17T22:24:05.511165",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 198,
+      "output_tokens": 39,
+      "total_tokens": 237
+    },
+    {
+      "timestamp": "2026-03-17T22:24:17.928469",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 200,
+      "output_tokens": 39,
+      "total_tokens": 239
+    },
+    {
+      "timestamp": "2026-03-17T22:24:37.640939",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 240,
+      "output_tokens": 21,
+      "total_tokens": 261
+    },
+    {
+      "timestamp": "2026-03-17T22:24:51.440833",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 211,
+      "output_tokens": 37,
+      "total_tokens": 248
+    },
+    {
+      "timestamp": "2026-03-17T22:25:06.038548",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 230,
+      "output_tokens": 38,
+      "total_tokens": 268
+    },
+    {
+      "timestamp": "2026-03-17T22:25:28.696789",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 237,
+      "output_tokens": 30,
+      "total_tokens": 267
+    },
+    {
+      "timestamp": "2026-03-17T22:25:52.730218",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 164,
+      "output_tokens": 34,
+      "total_tokens": 198
+    },
+    {
+      "timestamp": "2026-03-17T22:26:05.836900",
+      "session_id": "reasoning_multi_agent_221844",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 166,
+      "output_tokens": 28,
+      "total_tokens": 194
+    },
+    {
+      "timestamp": "2026-03-17T21:46:51.774704",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1233,
+      "output_tokens": 65,
+      "total_tokens": 1298
+    },
+    {
+      "timestamp": "2026-03-17T21:47:03.511571",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1431,
+      "output_tokens": 177,
+      "total_tokens": 1608
+    },
+    {
+      "timestamp": "2026-03-17T21:47:20.522822",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1783,
+      "output_tokens": 129,
+      "total_tokens": 1912
+    },
+    {
+      "timestamp": "2026-03-17T21:49:20.864073",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1234,
+      "output_tokens": 102,
+      "total_tokens": 1336
+    },
+    {
+      "timestamp": "2026-03-17T21:49:48.864216",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1683,
+      "output_tokens": 398,
+      "total_tokens": 2081
+    },
+    {
+      "timestamp": "2026-03-17T21:50:14.278624",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2472,
+      "output_tokens": 376,
+      "total_tokens": 2848
+    },
+    {
+      "timestamp": "2026-03-17T21:50:28.170221",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3217,
+      "output_tokens": 167,
+      "total_tokens": 3384
+    },
+    {
+      "timestamp": "2026-03-17T21:50:56.464774",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1234,
+      "output_tokens": 76,
+      "total_tokens": 1310
+    },
+    {
+      "timestamp": "2026-03-17T21:51:31.891669",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1638,
+      "output_tokens": 379,
+      "total_tokens": 2017
+    },
+    {
+      "timestamp": "2026-03-17T21:51:46.595951",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2389,
+      "output_tokens": 230,
+      "total_tokens": 2619
+    },
+    {
+      "timestamp": "2026-03-17T21:55:41.356926",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1186,
+      "output_tokens": 272,
+      "total_tokens": 1458
+    },
+    {
+      "timestamp": "2026-03-17T21:55:44.747147",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1602,
+      "output_tokens": 718,
+      "total_tokens": 2320
+    },
+    {
+      "timestamp": "2026-03-17T21:55:57.768643",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 2344,
+      "output_tokens": 3168,
+      "total_tokens": 5512
+    },
+    {
+      "timestamp": "2026-03-17T21:56:03.408276",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 3104,
+      "output_tokens": 1319,
+      "total_tokens": 4423
+    },
+    {
+      "timestamp": "2026-03-17T21:56:06.663643",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 3864,
+      "output_tokens": 737,
+      "total_tokens": 4601
+    },
+    {
+      "timestamp": "2026-03-17T21:56:18.696872",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1185,
+      "output_tokens": 231,
+      "total_tokens": 1416
+    },
+    {
+      "timestamp": "2026-03-17T21:56:20.455915",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1436,
+      "output_tokens": 363,
+      "total_tokens": 1799
+    },
+    {
+      "timestamp": "2026-03-17T21:56:22.910160",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1680,
+      "output_tokens": 583,
+      "total_tokens": 2263
+    },
+    {
+      "timestamp": "2026-03-17T21:56:24.754649",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1900,
+      "output_tokens": 323,
+      "total_tokens": 2223
+    },
+    {
+      "timestamp": "2026-03-17T21:58:57.407925",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1435,
+      "output_tokens": 681,
+      "total_tokens": 2116
+    },
+    {
+      "timestamp": "2026-03-17T21:58:58.386823",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1722,
+      "output_tokens": 151,
+      "total_tokens": 1873
+    },
+    {
+      "timestamp": "2026-03-17T22:03:02.736049",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1447,
+      "output_tokens": 525,
+      "total_tokens": 1972
+    },
+    {
+      "timestamp": "2026-03-17T22:07:30.595719",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1233,
+      "output_tokens": 65,
+      "total_tokens": 1298
+    },
+    {
+      "timestamp": "2026-03-17T22:07:42.205787",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1431,
+      "output_tokens": 172,
+      "total_tokens": 1603
+    },
+    {
+      "timestamp": "2026-03-17T22:07:54.526647",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1773,
+      "output_tokens": 138,
+      "total_tokens": 1911
+    },
+    {
+      "timestamp": "2026-03-17T22:08:40.770108",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1233,
+      "output_tokens": 65,
+      "total_tokens": 1298
+    },
+    {
+      "timestamp": "2026-03-17T22:08:52.543751",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1431,
+      "output_tokens": 172,
+      "total_tokens": 1603
+    },
+    {
+      "timestamp": "2026-03-17T22:09:05.311190",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1773,
+      "output_tokens": 144,
+      "total_tokens": 1917
+    },
+    {
+      "timestamp": "2026-03-17T22:09:54.791374",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1447,
+      "output_tokens": 496,
+      "total_tokens": 1943
+    },
+    {
+      "timestamp": "2026-03-17T22:11:52.403739",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1688,
+      "output_tokens": 1,
+      "total_tokens": 1689
+    },
+    {
+      "timestamp": "2026-03-17T22:16:55.027575",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1512,
+      "output_tokens": 554,
+      "total_tokens": 2066
+    },
+    {
+      "timestamp": "2026-03-17T22:16:56.696981",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1803,
+      "output_tokens": 210,
+      "total_tokens": 2013
+    },
+    {
+      "timestamp": "2026-03-17T22:16:58.722834",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 2223,
+      "output_tokens": 64,
+      "total_tokens": 2287
+    },
+    {
+      "timestamp": "2026-03-17T22:20:15.252357",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1534,
+      "output_tokens": 1,
+      "total_tokens": 1535
+    },
+    {
+      "timestamp": "2026-03-17T22:21:46.277425",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1346,
+      "output_tokens": 78,
+      "total_tokens": 1424
+    },
+    {
+      "timestamp": "2026-03-17T22:21:56.702989",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1557,
+      "output_tokens": 172,
+      "total_tokens": 1729
+    },
+    {
+      "timestamp": "2026-03-17T22:22:02.186144",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1899,
+      "output_tokens": 151,
+      "total_tokens": 2050
+    },
+    {
+      "timestamp": "2026-03-17T22:22:22.590111",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2199,
+      "output_tokens": 122,
+      "total_tokens": 2321
+    },
+    {
+      "timestamp": "2026-03-17T22:24:34.088729",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 59,
+      "total_tokens": 1407
+    },
+    {
+      "timestamp": "2026-03-17T22:24:39.472646",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1506,
+      "output_tokens": 135,
+      "total_tokens": 1641
+    },
+    {
+      "timestamp": "2026-03-17T22:24:49.528762",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1775,
+      "output_tokens": 119,
+      "total_tokens": 1894
+    },
+    {
+      "timestamp": "2026-03-18T09:24:14.419503",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1349,
+      "output_tokens": 65,
+      "total_tokens": 1414
+    },
+    {
+      "timestamp": "2026-03-18T09:24:28.845851",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1547,
+      "output_tokens": 172,
+      "total_tokens": 1719
+    },
+    {
+      "timestamp": "2026-03-18T09:24:42.614994",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1889,
+      "output_tokens": 149,
+      "total_tokens": 2038
+    },
+    {
+      "timestamp": "2026-03-18T09:24:43.466892",
+      "session_id": "baseline_092407",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 273,
+      "output_tokens": 21,
+      "total_tokens": 294
+    },
+    {
+      "timestamp": "2026-03-18T09:25:00.256791",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 28,
+      "total_tokens": 1376
+    },
+    {
+      "timestamp": "2026-03-18T09:25:07.637239",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1418,
+      "output_tokens": 42,
+      "total_tokens": 1460
+    },
+    {
+      "timestamp": "2026-03-18T09:25:08.552993",
+      "session_id": "baseline_092407",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 165,
+      "output_tokens": 23,
+      "total_tokens": 188
+    },
+    {
+      "timestamp": "2026-03-18T09:25:14.199024",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 61,
+      "total_tokens": 1409
+    },
+    {
+      "timestamp": "2026-03-18T09:26:34.228504",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2197,
+      "output_tokens": 847,
+      "total_tokens": 3044
+    },
+    {
+      "timestamp": "2026-03-18T09:26:35.408996",
+      "session_id": "baseline_092407",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 143,
+      "output_tokens": 43,
+      "total_tokens": 186
+    },
+    {
+      "timestamp": "2026-03-18T09:26:48.485231",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1347,
+      "output_tokens": 93,
+      "total_tokens": 1440
+    },
+    {
+      "timestamp": "2026-03-18T09:27:02.628754",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1768,
+      "output_tokens": 347,
+      "total_tokens": 2115
+    },
+    {
+      "timestamp": "2026-03-18T09:27:28.349623",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2455,
+      "output_tokens": 324,
+      "total_tokens": 2779
+    },
+    {
+      "timestamp": "2026-03-18T09:27:45.637083",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3095,
+      "output_tokens": 176,
+      "total_tokens": 3271
+    },
+    {
+      "timestamp": "2026-03-18T09:27:53.408012",
+      "session_id": "baseline_092407",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 298,
+      "output_tokens": 28,
+      "total_tokens": 326
+    },
+    {
+      "timestamp": "2026-03-18T09:28:00.493258",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 81,
+      "total_tokens": 1429
+    },
+    {
+      "timestamp": "2026-03-18T09:28:06.817722",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1528,
+      "output_tokens": 135,
+      "total_tokens": 1663
+    },
+    {
+      "timestamp": "2026-03-18T09:28:35.632172",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1797,
+      "output_tokens": 118,
+      "total_tokens": 1915
+    },
+    {
+      "timestamp": "2026-03-18T09:28:43.543728",
+      "session_id": "baseline_092407",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2032,
+      "output_tokens": 136,
+      "total_tokens": 2168
+    },
+    {
+      "timestamp": "2026-03-18T09:28:44.636320",
+      "session_id": "baseline_092407",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 258,
+      "output_tokens": 25,
+      "total_tokens": 283
+    },
+    {
+      "timestamp": "2026-03-18T09:28:49.522606",
+      "session_id": "reasoning_092848",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1537,
+      "output_tokens": 1,
+      "total_tokens": 1538
+    },
+    {
+      "timestamp": "2026-03-18T09:28:57.488582",
+      "session_id": "reasoning_092848",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1187,
+      "output_tokens": 52,
+      "total_tokens": 1239
+    },
+    {
+      "timestamp": "2026-03-18T09:29:02.175566",
+      "session_id": "reasoning_092848",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 1,
+      "total_tokens": 1537
+    },
+    {
+      "timestamp": "2026-03-18T09:29:03.528690",
+      "session_id": "reasoning_092848",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1186,
+      "output_tokens": 55,
+      "total_tokens": 1241
+    },
+    {
+      "timestamp": "2026-03-18T09:29:08.382916",
+      "session_id": "reasoning_092848",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 1,
+      "total_tokens": 1537
+    },
+    {
+      "timestamp": "2026-03-18T09:29:10.747409",
+      "session_id": "reasoning_092848",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1186,
+      "output_tokens": 55,
+      "total_tokens": 1241
+    },
+    {
+      "timestamp": "2026-03-18T09:29:15.451087",
+      "session_id": "reasoning_092848",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1535,
+      "output_tokens": 1,
+      "total_tokens": 1536
+    },
+    {
+      "timestamp": "2026-03-18T09:29:16.845623",
+      "session_id": "reasoning_092848",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1185,
+      "output_tokens": 54,
+      "total_tokens": 1239
+    },
+    {
+      "timestamp": "2026-03-18T09:29:22.647053",
+      "session_id": "reasoning_092848",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 1,
+      "total_tokens": 1537
+    },
+    {
+      "timestamp": "2026-03-18T09:29:24.143122",
+      "session_id": "reasoning_092848",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1186,
+      "output_tokens": 60,
+      "total_tokens": 1246
+    },
+    {
+      "timestamp": "2026-03-18T09:29:51.310777",
+      "session_id": "multi_agent_092928",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 178,
+      "output_tokens": 31,
+      "total_tokens": 209
+    },
+    {
+      "timestamp": "2026-03-18T09:30:04.058069",
+      "session_id": "multi_agent_092928",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 135,
+      "output_tokens": 14,
+      "total_tokens": 149
+    },
+    {
+      "timestamp": "2026-03-18T09:30:31.670324",
+      "session_id": "multi_agent_092928",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 190,
+      "output_tokens": 24,
+      "total_tokens": 214
+    },
+    {
+      "timestamp": "2026-03-18T09:30:55.241326",
+      "session_id": "multi_agent_092928",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 142,
+      "output_tokens": 14,
+      "total_tokens": 156
+    },
+    {
+      "timestamp": "2026-03-18T09:31:25.307570",
+      "session_id": "multi_agent_092928",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 173,
+      "output_tokens": 33,
+      "total_tokens": 206
+    },
+    {
+      "timestamp": "2026-03-18T08:31:39.638371",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 57,
+      "total_tokens": 1405
+    },
+    {
+      "timestamp": "2026-03-18T09:33:19.666084",
+      "session_id": "reasoning_multi_agent_093129",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 225,
+      "output_tokens": 28,
+      "total_tokens": 253
+    },
+    {
+      "timestamp": "2026-03-18T09:33:43.473678",
+      "session_id": "reasoning_multi_agent_093129",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 150,
+      "output_tokens": 33,
+      "total_tokens": 183
+    },
+    {
+      "timestamp": "2026-03-18T09:34:09.267598",
+      "session_id": "reasoning_multi_agent_093129",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 182,
+      "output_tokens": 22,
+      "total_tokens": 204
+    },
+    {
+      "timestamp": "2026-03-18T09:35:00.659870",
+      "session_id": "reasoning_multi_agent_093129",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 186,
+      "output_tokens": 24,
+      "total_tokens": 210
+    },
+    {
+      "timestamp": "2026-03-18T08:35:21.308094",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 61,
+      "total_tokens": 1409
+    },
+    {
+      "timestamp": "2026-03-18T09:35:44.274903",
+      "session_id": "reasoning_multi_agent_093129",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 190,
+      "output_tokens": 21,
+      "total_tokens": 211
+    },
+    {
+      "timestamp": "2026-03-18T08:36:23.489999",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2197,
+      "output_tokens": 845,
+      "total_tokens": 3042
+    },
+    {
+      "timestamp": "2026-03-18T08:36:26.141762",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3074,
+      "output_tokens": 42,
+      "total_tokens": 3116
+    },
+    {
+      "timestamp": "2026-03-18T08:37:16.093783",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3904,
+      "output_tokens": 845,
+      "total_tokens": 4749
+    },
+    {
+      "timestamp": "2026-03-18T08:38:08.585461",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 4781,
+      "output_tokens": 827,
+      "total_tokens": 5608
+    },
+    {
+      "timestamp": "2026-03-18T08:44:04.022193",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 12480,
+      "output_tokens": 6642,
+      "total_tokens": 19122
+    },
+    {
+      "timestamp": "2026-03-18T08:44:09.473908",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1304,
+      "output_tokens": 212,
+      "total_tokens": 1516
+    },
+    {
+      "timestamp": "2026-03-18T08:44:09.683650",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1306,
+      "output_tokens": 238,
+      "total_tokens": 1544
+    },
+    {
+      "timestamp": "2026-03-18T08:44:12.323909",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 1555,
+      "output_tokens": 510,
+      "total_tokens": 2065
+    },
+    {
+      "timestamp": "2026-03-18T08:44:13.153515",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 2033,
+      "output_tokens": 756,
+      "total_tokens": 2789
+    },
+    {
+      "timestamp": "2026-03-18T08:44:13.355917",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 2333,
+      "output_tokens": 132,
+      "total_tokens": 2465
+    },
+    {
+      "timestamp": "2026-03-18T08:44:16.664624",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "unknown",
+      "input_tokens": 3455,
+      "output_tokens": 732,
+      "total_tokens": 4187
+    },
+    {
+      "timestamp": "2026-03-18T08:45:47.434423",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1346,
+      "output_tokens": 78,
+      "total_tokens": 1424
+    },
+    {
+      "timestamp": "2026-03-18T08:45:55.244403",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1557,
+      "output_tokens": 172,
+      "total_tokens": 1729
+    },
+    {
+      "timestamp": "2026-03-18T08:46:03.183130",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1899,
+      "output_tokens": 151,
+      "total_tokens": 2050
+    },
+    {
+      "timestamp": "2026-03-18T08:46:09.858432",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2199,
+      "output_tokens": 122,
+      "total_tokens": 2321
+    },
+    {
+      "timestamp": "2026-03-18T08:46:35.828360",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1348,
+      "output_tokens": 57,
+      "total_tokens": 1405
+    },
+    {
+      "timestamp": "2026-03-18T09:01:16.142990",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 82,
+      "total_tokens": 1574
+    },
+    {
+      "timestamp": "2026-03-18T09:02:04.910141",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1899,
+      "output_tokens": 380,
+      "total_tokens": 2279
+    },
+    {
+      "timestamp": "2026-03-18T09:02:15.900178",
+      "session_id": "unknown",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2649,
+      "output_tokens": 136,
+      "total_tokens": 2785
+    },
+    {
+      "timestamp": "2026-03-18T11:12:23.545744",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1493,
+      "output_tokens": 78,
+      "total_tokens": 1571
+    },
+    {
+      "timestamp": "2026-03-18T11:12:32.360588",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1704,
+      "output_tokens": 177,
+      "total_tokens": 1881
+    },
+    {
+      "timestamp": "2026-03-18T11:12:38.143434",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2056,
+      "output_tokens": 124,
+      "total_tokens": 2180
+    },
+    {
+      "timestamp": "2026-03-18T11:12:39.504200",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 393,
+      "output_tokens": 26,
+      "total_tokens": 419
+    },
+    {
+      "timestamp": "2026-03-18T11:12:45.458863",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 27,
+      "total_tokens": 1519
+    },
+    {
+      "timestamp": "2026-03-18T11:12:46.576240",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1561,
+      "output_tokens": 28,
+      "total_tokens": 1589
+    },
+    {
+      "timestamp": "2026-03-18T11:12:50.716017",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 296,
+      "output_tokens": 28,
+      "total_tokens": 324
+    },
+    {
+      "timestamp": "2026-03-18T11:12:58.884072",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 82,
+      "total_tokens": 1574
+    },
+    {
+      "timestamp": "2026-03-18T11:13:16.302953",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1899,
+      "output_tokens": 375,
+      "total_tokens": 2274
+    },
+    {
+      "timestamp": "2026-03-18T11:13:34.863081",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2640,
+      "output_tokens": 357,
+      "total_tokens": 2997
+    },
+    {
+      "timestamp": "2026-03-18T11:13:39.160924",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3345,
+      "output_tokens": 101,
+      "total_tokens": 3446
+    },
+    {
+      "timestamp": "2026-03-18T11:13:44.207400",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 369,
+      "output_tokens": 40,
+      "total_tokens": 409
+    },
+    {
+      "timestamp": "2026-03-18T11:13:52.239110",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1491,
+      "output_tokens": 98,
+      "total_tokens": 1589
+    },
+    {
+      "timestamp": "2026-03-18T11:14:06.315047",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1917,
+      "output_tokens": 379,
+      "total_tokens": 2296
+    },
+    {
+      "timestamp": "2026-03-18T11:14:16.414209",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2668,
+      "output_tokens": 357,
+      "total_tokens": 3025
+    },
+    {
+      "timestamp": "2026-03-18T11:14:24.666206",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3375,
+      "output_tokens": 185,
+      "total_tokens": 3560
+    },
+    {
+      "timestamp": "2026-03-18T11:14:25.728669",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 452,
+      "output_tokens": 28,
+      "total_tokens": 480
+    },
+    {
+      "timestamp": "2026-03-18T11:14:37.620462",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 100,
+      "total_tokens": 1592
+    },
+    {
+      "timestamp": "2026-03-18T11:14:49.725900",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1691,
+      "output_tokens": 140,
+      "total_tokens": 1831
+    },
+    {
+      "timestamp": "2026-03-18T11:14:56.353814",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1970,
+      "output_tokens": 123,
+      "total_tokens": 2093
+    },
+    {
+      "timestamp": "2026-03-18T11:15:10.066307",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2215,
+      "output_tokens": 117,
+      "total_tokens": 2332
+    },
+    {
+      "timestamp": "2026-03-18T11:15:11.849664",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 384,
+      "output_tokens": 37,
+      "total_tokens": 421
+    },
+    {
+      "timestamp": "2026-03-18T11:15:19.168602",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1490,
+      "output_tokens": 46,
+      "total_tokens": 1536
+    },
+    {
+      "timestamp": "2026-03-18T11:15:22.731170",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1585,
+      "output_tokens": 26,
+      "total_tokens": 1611
+    },
+    {
+      "timestamp": "2026-03-18T11:15:23.774439",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 292,
+      "output_tokens": 26,
+      "total_tokens": 318
+    },
+    {
+      "timestamp": "2026-03-18T11:15:32.665507",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1493,
+      "output_tokens": 39,
+      "total_tokens": 1532
+    },
+    {
+      "timestamp": "2026-03-18T11:15:47.125502",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1633,
+      "output_tokens": 144,
+      "total_tokens": 1777
+    },
+    {
+      "timestamp": "2026-03-18T11:15:48.496753",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1920,
+      "output_tokens": 39,
+      "total_tokens": 1959
+    },
+    {
+      "timestamp": "2026-03-18T11:15:51.427137",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 308,
+      "output_tokens": 31,
+      "total_tokens": 339
+    },
+    {
+      "timestamp": "2026-03-18T11:16:02.458871",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1494,
+      "output_tokens": 195,
+      "total_tokens": 1689
+    },
+    {
+      "timestamp": "2026-03-18T11:16:06.271170",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1819,
+      "output_tokens": 170,
+      "total_tokens": 1989
+    },
+    {
+      "timestamp": "2026-03-18T11:16:12.302302",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2159,
+      "output_tokens": 150,
+      "total_tokens": 2309
+    },
+    {
+      "timestamp": "2026-03-18T11:16:15.811875",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2459,
+      "output_tokens": 115,
+      "total_tokens": 2574
+    },
+    {
+      "timestamp": "2026-03-18T11:16:17.007934",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 385,
+      "output_tokens": 28,
+      "total_tokens": 413
+    },
+    {
+      "timestamp": "2026-03-18T11:16:25.696304",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1488,
+      "output_tokens": 74,
+      "total_tokens": 1562
+    },
+    {
+      "timestamp": "2026-03-18T11:16:26.759634",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 241,
+      "output_tokens": 30,
+      "total_tokens": 271
+    },
+    {
+      "timestamp": "2026-03-18T11:16:33.974632",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1487,
+      "output_tokens": 83,
+      "total_tokens": 1570
+    },
+    {
+      "timestamp": "2026-03-18T11:17:05.668380",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 263,
+      "output_tokens": 26,
+      "total_tokens": 289
+    },
+    {
+      "timestamp": "2026-03-18T11:17:17.169536",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1489,
+      "output_tokens": 59,
+      "total_tokens": 1548
+    },
+    {
+      "timestamp": "2026-03-18T11:17:18.384369",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 221,
+      "output_tokens": 30,
+      "total_tokens": 251
+    },
+    {
+      "timestamp": "2026-03-18T11:17:24.298395",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 45,
+      "total_tokens": 1537
+    },
+    {
+      "timestamp": "2026-03-18T11:17:27.333699",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 225,
+      "output_tokens": 38,
+      "total_tokens": 263
+    },
+    {
+      "timestamp": "2026-03-18T11:17:34.745547",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1489,
+      "output_tokens": 47,
+      "total_tokens": 1536
+    },
+    {
+      "timestamp": "2026-03-18T11:17:35.771519",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 223,
+      "output_tokens": 29,
+      "total_tokens": 252
+    },
+    {
+      "timestamp": "2026-03-18T11:17:47.968337",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1489,
+      "output_tokens": 118,
+      "total_tokens": 1607
+    },
+    {
+      "timestamp": "2026-03-18T11:17:49.215228",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 294,
+      "output_tokens": 34,
+      "total_tokens": 328
+    },
+    {
+      "timestamp": "2026-03-18T11:17:57.719199",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1490,
+      "output_tokens": 89,
+      "total_tokens": 1579
+    },
+    {
+      "timestamp": "2026-03-18T11:17:59.808148",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 274,
+      "output_tokens": 34,
+      "total_tokens": 308
+    },
+    {
+      "timestamp": "2026-03-18T11:18:14.794006",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 158,
+      "total_tokens": 1650
+    },
+    {
+      "timestamp": "2026-03-18T11:18:18.623310",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 341,
+      "output_tokens": 33,
+      "total_tokens": 374
+    },
+    {
+      "timestamp": "2026-03-18T11:18:30.903999",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 88,
+      "total_tokens": 1580
+    },
+    {
+      "timestamp": "2026-03-18T11:18:31.876778",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 238,
+      "output_tokens": 27,
+      "total_tokens": 265
+    },
+    {
+      "timestamp": "2026-03-18T11:18:43.283124",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1492,
+      "output_tokens": 65,
+      "total_tokens": 1557
+    },
+    {
+      "timestamp": "2026-03-18T11:18:44.757106",
+      "session_id": "baseline_111219",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1603,
+      "output_tokens": 47,
+      "total_tokens": 1650
+    },
+    {
+      "timestamp": "2026-03-18T11:18:49.713491",
+      "session_id": "baseline_111219",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 193,
+      "output_tokens": 31,
+      "total_tokens": 224
+    },
+    {
+      "timestamp": "2026-03-18T11:18:55.027094",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1537,
+      "output_tokens": 1,
+      "total_tokens": 1538
+    },
+    {
+      "timestamp": "2026-03-18T11:18:56.311702",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 892,
+      "output_tokens": 36,
+      "total_tokens": 928
+    },
+    {
+      "timestamp": "2026-03-18T11:19:01.587298",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 28,
+      "total_tokens": 1564
+    },
+    {
+      "timestamp": "2026-03-18T11:19:04.476605",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1606,
+      "output_tokens": 48,
+      "total_tokens": 1654
+    },
+    {
+      "timestamp": "2026-03-18T11:19:05.519848",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 306,
+      "output_tokens": 28,
+      "total_tokens": 334
+    },
+    {
+      "timestamp": "2026-03-18T11:19:11.122648",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 1,
+      "total_tokens": 1537
+    },
+    {
+      "timestamp": "2026-03-18T11:19:12.419987",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 891,
+      "output_tokens": 37,
+      "total_tokens": 928
+    },
+    {
+      "timestamp": "2026-03-18T11:19:17.594078",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1535,
+      "output_tokens": 1,
+      "total_tokens": 1536
+    },
+    {
+      "timestamp": "2026-03-18T11:19:18.810086",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 890,
+      "output_tokens": 37,
+      "total_tokens": 927
+    },
+    {
+      "timestamp": "2026-03-18T11:19:24.287903",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 1,
+      "total_tokens": 1537
+    },
+    {
+      "timestamp": "2026-03-18T11:19:29.125815",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 891,
+      "output_tokens": 39,
+      "total_tokens": 930
+    },
+    {
+      "timestamp": "2026-03-18T11:19:34.542943",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1534,
+      "output_tokens": 1,
+      "total_tokens": 1535
+    },
+    {
+      "timestamp": "2026-03-18T11:19:35.711595",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 889,
+      "output_tokens": 36,
+      "total_tokens": 925
+    },
+    {
+      "timestamp": "2026-03-18T11:19:43.274454",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1537,
+      "output_tokens": 40,
+      "total_tokens": 1577
+    },
+    {
+      "timestamp": "2026-03-18T11:19:52.448758",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1678,
+      "output_tokens": 95,
+      "total_tokens": 1773
+    },
+    {
+      "timestamp": "2026-03-18T11:19:53.691355",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 352,
+      "output_tokens": 23,
+      "total_tokens": 375
+    },
+    {
+      "timestamp": "2026-03-18T11:20:05.202012",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1460,
+      "output_tokens": 200,
+      "total_tokens": 1660
+    },
+    {
+      "timestamp": "2026-03-18T11:20:12.460858",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1868,
+      "output_tokens": 146,
+      "total_tokens": 2014
+    },
+    {
+      "timestamp": "2026-03-18T11:20:42.524264",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2119,
+      "output_tokens": 2,
+      "total_tokens": 2121
+    },
+    {
+      "timestamp": "2026-03-18T11:20:43.746663",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 273,
+      "output_tokens": 31,
+      "total_tokens": 304
+    },
+    {
+      "timestamp": "2026-03-18T11:20:54.892745",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1532,
+      "output_tokens": 98,
+      "total_tokens": 1630
+    },
+    {
+      "timestamp": "2026-03-18T11:20:58.165679",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 265,
+      "output_tokens": 35,
+      "total_tokens": 300
+    },
+    {
+      "timestamp": "2026-03-18T11:21:13.914803",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1531,
+      "output_tokens": 83,
+      "total_tokens": 1614
+    },
+    {
+      "timestamp": "2026-03-18T11:21:18.884025",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 243,
+      "output_tokens": 38,
+      "total_tokens": 281
+    },
+    {
+      "timestamp": "2026-03-18T11:21:28.316901",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1533,
+      "output_tokens": 106,
+      "total_tokens": 1639
+    },
+    {
+      "timestamp": "2026-03-18T11:21:29.518812",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 268,
+      "output_tokens": 33,
+      "total_tokens": 301
+    },
+    {
+      "timestamp": "2026-03-18T11:21:39.998607",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 37,
+      "total_tokens": 1573
+    },
+    {
+      "timestamp": "2026-03-18T11:21:49.127581",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 217,
+      "output_tokens": 30,
+      "total_tokens": 247
+    },
+    {
+      "timestamp": "2026-03-18T11:21:59.503917",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1533,
+      "output_tokens": 64,
+      "total_tokens": 1597
+    },
+    {
+      "timestamp": "2026-03-18T11:22:00.625602",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 240,
+      "output_tokens": 32,
+      "total_tokens": 272
+    },
+    {
+      "timestamp": "2026-03-18T11:22:08.871236",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1533,
+      "output_tokens": 139,
+      "total_tokens": 1672
+    },
+    {
+      "timestamp": "2026-03-18T11:22:10.142223",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 315,
+      "output_tokens": 41,
+      "total_tokens": 356
+    },
+    {
+      "timestamp": "2026-03-18T11:22:18.742115",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1534,
+      "output_tokens": 61,
+      "total_tokens": 1595
+    },
+    {
+      "timestamp": "2026-03-18T11:22:20.410291",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1613,
+      "output_tokens": 26,
+      "total_tokens": 1639
+    },
+    {
+      "timestamp": "2026-03-18T11:22:30.355601",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 2130,
+      "output_tokens": 94,
+      "total_tokens": 2224
+    },
+    {
+      "timestamp": "2026-03-18T11:22:32.570173",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 267,
+      "output_tokens": 33,
+      "total_tokens": 300
+    },
+    {
+      "timestamp": "2026-03-18T11:22:38.685944",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 74,
+      "total_tokens": 1610
+    },
+    {
+      "timestamp": "2026-03-18T11:22:39.922089",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 257,
+      "output_tokens": 33,
+      "total_tokens": 290
+    },
+    {
+      "timestamp": "2026-03-18T11:22:50.506304",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 34,
+      "total_tokens": 1570
+    },
+    {
+      "timestamp": "2026-03-18T11:22:55.949082",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 3962,
+      "output_tokens": 87,
+      "total_tokens": 4049
+    },
+    {
+      "timestamp": "2026-03-18T11:22:57.296394",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 225,
+      "output_tokens": 29,
+      "total_tokens": 254
+    },
+    {
+      "timestamp": "2026-03-18T11:23:04.103427",
+      "session_id": "reasoning_111853",
+      "caller": "agent",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 1536,
+      "output_tokens": 95,
+      "total_tokens": 1631
+    },
+    {
+      "timestamp": "2026-03-18T11:23:05.294365",
+      "session_id": "reasoning_111853",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 242,
+      "output_tokens": 32,
+      "total_tokens": 274
+    },
+    {
+      "timestamp": "2026-03-18T11:23:41.253470",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 345,
+      "output_tokens": 26,
+      "total_tokens": 371
+    },
+    {
+      "timestamp": "2026-03-18T11:23:54.798125",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 280,
+      "output_tokens": 29,
+      "total_tokens": 309
+    },
+    {
+      "timestamp": "2026-03-18T11:24:20.489384",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 326,
+      "output_tokens": 39,
+      "total_tokens": 365
+    },
+    {
+      "timestamp": "2026-03-18T11:25:02.800803",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 309,
+      "output_tokens": 37,
+      "total_tokens": 346
+    },
+    {
+      "timestamp": "2026-03-18T11:25:24.732587",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 328,
+      "output_tokens": 29,
+      "total_tokens": 357
+    },
+    {
+      "timestamp": "2026-03-18T11:25:35.762569",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 288,
+      "output_tokens": 26,
+      "total_tokens": 314
+    },
+    {
+      "timestamp": "2026-03-18T11:25:51.871638",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 305,
+      "output_tokens": 35,
+      "total_tokens": 340
+    },
+    {
+      "timestamp": "2026-03-18T11:26:14.736373",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 299,
+      "output_tokens": 31,
+      "total_tokens": 330
+    },
+    {
+      "timestamp": "2026-03-18T11:26:36.599902",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 191,
+      "output_tokens": 28,
+      "total_tokens": 219
+    },
+    {
+      "timestamp": "2026-03-18T11:26:45.845069",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 190,
+      "output_tokens": 27,
+      "total_tokens": 217
+    },
+    {
+      "timestamp": "2026-03-18T11:27:22.963466",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 202,
+      "output_tokens": 33,
+      "total_tokens": 235
+    },
+    {
+      "timestamp": "2026-03-18T11:27:35.128123",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 230,
+      "output_tokens": 32,
+      "total_tokens": 262
+    },
+    {
+      "timestamp": "2026-03-18T11:27:48.904975",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 232,
+      "output_tokens": 39,
+      "total_tokens": 271
+    },
+    {
+      "timestamp": "2026-03-18T11:27:58.368665",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 201,
+      "output_tokens": 34,
+      "total_tokens": 235
+    },
+    {
+      "timestamp": "2026-03-18T11:28:09.435227",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 209,
+      "output_tokens": 36,
+      "total_tokens": 245
+    },
+    {
+      "timestamp": "2026-03-18T11:28:20.782254",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 195,
+      "output_tokens": 34,
+      "total_tokens": 229
+    },
+    {
+      "timestamp": "2026-03-18T11:30:41.805641",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 316,
+      "output_tokens": 26,
+      "total_tokens": 342
+    },
+    {
+      "timestamp": "2026-03-18T11:30:55.361296",
+      "session_id": "multi_agent_112309",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 167,
+      "output_tokens": 32,
+      "total_tokens": 199
+    },
+    {
+      "timestamp": "2026-03-18T11:31:55.645980",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 370,
+      "output_tokens": 33,
+      "total_tokens": 403
+    },
+    {
+      "timestamp": "2026-03-18T11:32:29.566941",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 279,
+      "output_tokens": 29,
+      "total_tokens": 308
+    },
+    {
+      "timestamp": "2026-03-18T11:33:35.105043",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 337,
+      "output_tokens": 36,
+      "total_tokens": 373
+    },
+    {
+      "timestamp": "2026-03-18T11:34:42.604032",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 346,
+      "output_tokens": 34,
+      "total_tokens": 380
+    },
+    {
+      "timestamp": "2026-03-18T11:35:21.204288",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 347,
+      "output_tokens": 40,
+      "total_tokens": 387
+    },
+    {
+      "timestamp": "2026-03-18T11:35:49.677173",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 305,
+      "output_tokens": 37,
+      "total_tokens": 342
+    },
+    {
+      "timestamp": "2026-03-18T11:36:29.148000",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 344,
+      "output_tokens": 28,
+      "total_tokens": 372
+    },
+    {
+      "timestamp": "2026-03-18T11:37:37.885755",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 345,
+      "output_tokens": 34,
+      "total_tokens": 379
+    },
+    {
+      "timestamp": "2026-03-18T11:37:53.337553",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 205,
+      "output_tokens": 38,
+      "total_tokens": 243
+    },
+    {
+      "timestamp": "2026-03-18T11:38:26.661941",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 211,
+      "output_tokens": 43,
+      "total_tokens": 254
+    },
+    {
+      "timestamp": "2026-03-18T11:38:54.667373",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 197,
+      "output_tokens": 32,
+      "total_tokens": 229
+    },
+    {
+      "timestamp": "2026-03-18T11:39:43.527897",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 209,
+      "output_tokens": 34,
+      "total_tokens": 243
+    },
+    {
+      "timestamp": "2026-03-18T11:40:18.633063",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 250,
+      "output_tokens": 29,
+      "total_tokens": 279
+    },
+    {
+      "timestamp": "2026-03-18T11:40:37.222485",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 223,
+      "output_tokens": 35,
+      "total_tokens": 258
+    },
+    {
+      "timestamp": "2026-03-18T11:41:00.920659",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 226,
+      "output_tokens": 38,
+      "total_tokens": 264
+    },
+    {
+      "timestamp": "2026-03-18T11:42:01.678633",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 227,
+      "output_tokens": 35,
+      "total_tokens": 262
+    },
+    {
+      "timestamp": "2026-03-18T11:44:31.595290",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 190,
+      "output_tokens": 28,
+      "total_tokens": 218
+    },
+    {
+      "timestamp": "2026-03-18T11:44:54.725574",
+      "session_id": "reasoning_multi_agent_113059",
+      "caller": "judge",
+      "model": "arcee-ai/trinity-large-preview:free",
+      "input_tokens": 177,
+      "output_tokens": 34,
+      "total_tokens": 211
+    }
+  ]
+}

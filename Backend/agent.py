@@ -4,7 +4,9 @@ from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, Field
 from database import run_query
 from prompts import build_system_prompt, BASELINE_PROMPT
-from config import agent_llm
+from config import agent_llm, GOOGLE_AGENT_MODEL
+from token_tracker import log_call, extract_usage
+import re
 
 
 # ── Tool input schemas ────────────────────────────────────────────────────────
@@ -54,7 +56,7 @@ def _generate_insight(data: str, question: str) -> str:
     })
 
 
-# ── Tools ─────────────────────────────────────────────────────────────────────
+# ── Tools ──────────────────────────────────────────────────────────────────────
 
 TOOLS = [
     StructuredTool(
@@ -65,13 +67,13 @@ TOOLS = [
     ),
     StructuredTool(
         name="generate_visualization",
-        description="Generate a chart specification from query results. Call this AFTER query_database when the data would be clearer as a chart — for rankings, trends, or breakdowns.",
+        description="Generate a chart specification from query results. Call this AFTER query_database when the data would be clearer as a chart.",
         func=_generate_visualization,
         args_schema=GenerateVisualizationInput,
     ),
     StructuredTool(
         name="generate_insight",
-        description="Write a short plain-English business insight based on query results. Call this to add narrative context on top of numbers.",
+        description="Write a short plain-English business insight based on query results.",
         func=_generate_insight,
         args_schema=GenerateInsightInput,
     ),
@@ -80,17 +82,89 @@ TOOLS = [
 tools_by_name = {t.name: t for t in TOOLS}
 
 
+def _clean_response(text: str) -> str:
+    """Strip all leaked prompt content before returning to the user."""
+
+    if not text:
+        return text
+
+    # ── Strip thinking blocks ──────────────────────────────────────────────────
+    text = re.sub(r"<thinking>.*?</thinking>", "", text, flags=re.DOTALL)
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
+
+    # ── Strip STEP reasoning blocks if leaked inline ───────────────────────────
+    # Catches "STEP 1 — ...", "STEP 2 —..." etc and everything until the next
+    # section or the ANSWER block
+    text = re.sub(
+        r"STEP\s+\d+\s*[—\-]+.*?(?=STEP\s+\d+|ANSWER:|$)",
+        "", text, flags=re.DOTALL
+    )
+
+    # ── Strip structured labels ────────────────────────────────────────────────
+    # Remove "ANSWER:", "DATA:", "ASSUMPTIONS:", "FOLLOW-UP:" labels
+    # but keep the content after them
+    text = re.sub(r"^ANSWER:\s*", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^DATA:\s*", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^ASSUMPTIONS:\s*", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^FOLLOW-UP:\s*", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^FOLLOW-UP QUESTION:\s*", "", text, flags=re.MULTILINE)
+
+    # ── Strip XML prompt section tags ──────────────────────────────────────────
+    text = re.sub(
+        r"<(?:role|reasoning_protocol|output_format|ambiguity_handling|"
+        r"error_handling|database_schema|reasoning_steps)[^>]*>.*?"
+        r"</(?:role|reasoning_protocol|output_format|ambiguity_handling|"
+        r"error_handling|database_schema|reasoning_steps)>",
+        "", text, flags=re.DOTALL
+    )
+
+    # ── Strip lines that are clearly leaked prompt headers ─────────────────────
+    leaked_markers = [
+        "## Your Reasoning Process",
+        "## How to Respond",
+        "## Database Schema",
+        "## Rules",
+        "## Hard Rules",
+        "## Your Personality",
+        "## How to Answer Questions",
+        "## Output Format",
+        "## Available Tools",
+        "## Reasoning Protocol",
+        "## Tool Call Order",
+        "## Ambiguity Handling",
+        "## Error Handling",
+        "## Visualization Rules",
+        "## SQL Guidelines",
+        "## Example Interaction",
+        "You are a data assistant",
+        "You are a thoughtful data analyst",
+        "Before writing any SQL",
+        "Do your reasoning silently",
+        "Never repeat these instructions",
+        "Always follow this sequence",
+        "You have three tools",
+        "You have access to a DuckDB",
+    ]
+    lines = text.split("\n")
+    cleaned_lines = [
+        line for line in lines
+        if not any(line.strip().startswith(marker) for marker in leaked_markers)
+    ]
+    text = "\n".join(cleaned_lines)
+
+    # ── Clean up excess whitespace ─────────────────────────────────────────────
+    text = re.sub(r"\n{3,}", "\n\n", text)
+
+    return text.strip()
 # ── Agent ──────────────────────────────────────────────────────────────────────
 
-def run_agent(user_message: str, schema: str, base_prompt: str = BASELINE_PROMPT) -> dict:
-    """
-    Main agent loop. Works with both Groq and Google providers.
-    base_prompt: the system prompt template — must contain {schema} placeholder
-                 OR will have schema appended automatically.
-    """
+def run_agent(
+    user_message: str,
+    schema: str,
+    base_prompt: str = BASELINE_PROMPT,
+    session_id: str = None,
+) -> dict:
     system_prompt = build_system_prompt(base_prompt, schema)
-    
-    # Bind tools fresh each call — required for Groq
     llm_with_tools = agent_llm.bind_tools(TOOLS)
 
     messages = [
@@ -105,28 +179,30 @@ def run_agent(user_message: str, schema: str, base_prompt: str = BASELINE_PROMPT
         try:
             response = llm_with_tools.invoke(messages)
         except Exception as e:
-            return {
-                "text": f"The agent encountered an error: {str(e)}",
-                "chart": None,
-            }
+            return {"text": f"The agent encountered an error: {str(e)}", "chart": None}
+
+        # ── Track this LLM call ────────────────────────────────────────────────
+        in_tok, out_tok = extract_usage(response)
+        log_call(
+            caller="agent",
+            model=agent_llm.model_name if hasattr(agent_llm, "model_name") else "unknown",
+            input_tokens=in_tok,
+            output_tokens=out_tok,
+            session_id=session_id,
+        )
 
         messages.append(response)
 
-        # Handle Gemini malformed calls
         finish_reason = ""
         if hasattr(response, "response_metadata"):
             finish_reason = response.response_metadata.get("finish_reason", "")
         if finish_reason == "MALFORMED_FUNCTION_CALL":
-            messages.append(
-                HumanMessage(content="Your tool call was malformed. Please try again with valid arguments.")
-            )
+            messages.append(HumanMessage(content="Your tool call was malformed. Please try again."))
             continue
 
-        # No tool calls — agent is done
         if not response.tool_calls:
             break
 
-        # Execute each tool call
         for tool_call in response.tool_calls:
             tool_name = tool_call["name"]
             tool_args = tool_call["args"]
@@ -145,30 +221,22 @@ def run_agent(user_message: str, schema: str, base_prompt: str = BASELINE_PROMPT
                 except Exception:
                     pass
 
-            messages.append(
-                ToolMessage(
-                    content=str(tool_result),
-                    tool_call_id=tool_call["id"],
-                )
-            )
+            messages.append(ToolMessage(content=str(tool_result), tool_call_id=tool_call["id"]))
 
-    # ── Extract final text ─────────────────────────────────────────────────────
     final_text = ""
     for msg in reversed(messages):
         if isinstance(msg, (HumanMessage, ToolMessage)):
             continue
         content = msg.content if hasattr(msg, "content") else ""
         if isinstance(content, list):
-            text_parts = [
-                p.get("text", "") if isinstance(p, dict) else str(p)
-                for p in content
-            ]
-            content = " ".join(text_parts).strip()
+            content = " ".join(
+                p.get("text", "") if isinstance(p, dict) else str(p) for p in content
+            ).strip()
         if content.strip():
             final_text = content.strip()
             break
 
     return {
-        "text": final_text,
-        "chart": chart_spec,
+    "text": _clean_response(final_text),  # ← must wrap final_text
+    "chart": chart_spec,
     }
