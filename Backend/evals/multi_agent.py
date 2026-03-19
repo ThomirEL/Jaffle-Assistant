@@ -4,15 +4,13 @@ from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, Field
 from database import run_query
 from config import agent_llm
+import re
 
-
-# ── Tool input schemas ─────────────────────────────────────────────────────────
 
 class QueryDatabaseInput(BaseModel):
     sql: str = Field(description="A valid DuckDB SQL SELECT query to execute against the database.")
 
 
-# ── Tool functions ─────────────────────────────────────────────────────────────
 
 def _query_database(sql: str) -> str:
     result = run_query(sql)
@@ -32,8 +30,7 @@ def _make_sql_tool():
     )
 
 
-# ── Sub-agent helpers ──────────────────────────────────────────────────────────
-
+# Sub agents
 def _invoke_with_tools(system: str, user: str, tools: list) -> tuple[str, list]:
     """
     Runs a single sub-agent loop with the given tools.
@@ -239,7 +236,7 @@ Then respond with either:
 - A JSON object: {"chart_type": "bar", "x_key": "col1", "y_key": "col2", "title": "..."}
 """
 
-    import re
+    
     data_preview = json.dumps(query_result, default=str)[:1000]
     response = agent_llm.invoke([
         SystemMessage(content=system),
@@ -291,7 +288,7 @@ Never use SQL, column names, or technical jargon. Be specific with numbers.
     return text
 
 
-# ── Orchestrators ──────────────────────────────────────────────────────────────
+# Orchestrators
 
 def run_multi_agent(question: str, schema: str) -> dict:
     """Standard multi-agent: SQL → Chart → Insight."""

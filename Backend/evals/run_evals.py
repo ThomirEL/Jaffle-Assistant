@@ -2,6 +2,8 @@ import sys
 import time
 import mlflow
 from pathlib import Path
+from token_tracker import print_summary
+from datetime import datetime
 
 # Setup
 BACKEND_DIR  = Path(__file__).parent.parent
@@ -25,7 +27,9 @@ from evals.eval_configs.evals_variants import PROMPT_VARIANTS, AGENT_VARIANTS, U
 
 TRACKER = UsageTracker()
 
+# Constants
 SQL_REPEATED_TIMES = 3
+TYPE_OF_RUN = "sql_updated_baseline" # Change to agent, prompt, updated_baseline, sql_updated_baseline. Check readme for more details
 
 def run_question(variant: dict, question_config: dict, schema: str, session_id: str) -> dict:
     start = time.time()
@@ -83,9 +87,6 @@ def run_question(variant: dict, question_config: dict, schema: str, session_id: 
     }
 
 def main():
-    from token_tracker import print_summary
-    from datetime import datetime
-
     print("Loading schema...")
     schema = get_schema()
 
@@ -93,16 +94,15 @@ def main():
     print(f"MLflow logging to: {MLFLOW_DIR}")
     mlflow.set_experiment("jaffle-agent-evals-run-6-repeatability-with-sql-queries")
 
-    TYPE_OF_RUN = "sql_updated_baseline"  # Change this to "agent" or "prompt" to run those variants instead of the updated baseline prompt
-
-    if TYPE_OF_RUN == "agent":
+    
+    if TYPE_OF_RUN == "agent":              # Test the 4 different agents variants (baseline, reasoning, multi agent, reasoning multi agent)
         variants_to_run = AGENT_VARIANTS
-    elif TYPE_OF_RUN == "prompt":
-        variants_to_run = PROMPT_VARIANTS
+    elif TYPE_OF_RUN == "prompt":           # Test the 4 different "one shot" prompts (concise, analytical, baseline and )
+        variants_to_run = PROMPT_VARIANTS   
     elif TYPE_OF_RUN == "updated_baseline":
-        variants_to_run = UPDATED_BASELINE
+        variants_to_run = UPDATED_BASELINE  # Test the new baseline prompt with improvements
     elif TYPE_OF_RUN == "sql_updated_baseline":
-        variants_to_run = SQL_UPDATED_BASELINE_PROMPT * SQL_REPEATED_TIMES  # Repeat the list 3 times
+        variants_to_run = SQL_UPDATED_BASELINE_PROMPT * SQL_REPEATED_TIMES     # Test the updated baseline prompt. This is intendted to see if there is consistency between runs in sql queries. Change SQL_REPEATED_TIMES to have as many runs as you want. 
     
 
     for variant in variants_to_run:                              # Change this to AGENT_VARIANTS to run agent-based evals or PROMPT_VARIANTS to run prompt-based eval

@@ -161,7 +161,7 @@ def run_agent(
     messages.append(HumanMessage(content=user_message))
 
     chart_spec = None
-    sql_queries = []      # ← capture every SQL call
+    sql_queries = []      # capture every SQL call for debugging
     max_iterations = 5
 
     for i in range(max_iterations):
